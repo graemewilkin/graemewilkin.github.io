@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<TITLE>Constructing points on a conic given four points and a tangent</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</HEAD>
+<BODY>
+<h1 align="center">Constructing points on a conic given four points and a tangent</h1>
+
+<p align="right"><a href="../index.html">Back to Geometry homepage</a></p>
+
+<p align="right"><a href="index.html">Back to Circle in Perspective main page</a></p>
+
+
+In the <a href="points_of_tangency.html">previous page</a>, we showed how to construct the four points \(A, B, C, D\) where the conic touches the quadrilateral. Given this information, we would now like to construct the conic.<br /><br />
+A good first step is to construct individual points on the conic. This is not entirely satisfactory (we would like to know more information about the conic, such as the focal points, position of the major and minor axes, etc.), but we can at least plot some points on the conic to get a general idea of its shape. If your goal is to sketch the conic then plotting some points will help with this.<br /><br />
+In the picture below, the points \(A, B, C, D\) are on the conic, and the line \(CY\) is tangent at the point \(C\). Given any point \(X\) on the line \(CY\), we can construct the point \(E\) on the conic using the converse to Pascal's theorem (the degenerate form with five points and a tangent line).<br /><br />
+First consider the Pascal hexagon \(ACCDBE\) (note the double point at C, where the side of the hexagon is the tangent CY). Pascal's theorem asserts that the intersection points \(P=AE \cap CD\), \(Q=AC \cap BD\) and \(X = BE \cap CC\) are all collinear (where \(CC\) denotes the tangent line at \(C\)).<br /><br />
+Conversely, if we are given the four points \(A, B, C, D\) and a point \(X\) on the tangent line at \(C\), then we can declare \(X\) to be the intersection of \(BE\) with the tangent at \(C\), and then construct the point \(E\) as follows. First construct \(Q=AC \cap BD\), and hence the line \(QX\). The point \(P\) is collinear with \(Q\) and \(X\) and it lies on the line \(CD\). Therefore we can construct \(P = CD \cap QX\). The converse to Pascal's theorem then says that the point \(E = BX \cap AP\) lies on the conic.<br /><br />
+The picture below illustrates this construction. The point \(X\) moves along the tangent line at \(C\), and we can see that the point \(E\) constructed above lies on the orange conic which passes through the points \(A, B, C, D\) and is tangent to the line \(CY\). <br />
+
+<CENTER>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/NtpmTBpJ/width/939/height/654/border/888888/rc/false/ai/false/sdz/true/smb/false/stb/false/stbh/true/ld/true/sri/true/at/auto" width="939px" height="654px" style="border:0px;"> </iframe>
+</CENTER>
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/ma
+thjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="/~graeme/files/icons/anim_written_in_vi.gif" border="0"
+></a>
+</p>
+
+
+
+</BODY>

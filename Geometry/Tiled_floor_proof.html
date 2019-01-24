@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>How Desargues' theorem is used in two-point perspective drawing</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</HEAD>
+<BODY>
+
+<h1 align="center">How Desargues' theorem is used in two-point perspective drawing</h1>
+
+<p align="right"><a href="index.html">Back to Geometry homepage</a></p>
+
+<p align="right"><a href="Tiled_floor.html">Back to two-point perspective main page</a></p>
+
+<br />
+
+First recall the construction of the two-point perspective picture of the tiled floor from the <a href="Tiled_floor.html">previous page</a>. Let \(X\) and \(Y\) be the two points of perspective on the horizon line \(XY\), let \(A\) be one corner of the tiled floor, so that one side is the line \(AX\) and the other side is the line \(AY\).<br /><br />
+Now choose two points \(B\) and \(C\) on the lines \(AX\) and \(AY\) respectively. Let \(D\) be the intersection of \(BY\) and \(CX\). Then the quadrilateral \(ABCD\) is the projection of the rectangle in the corner of the tiled floor. Let \(P = AD \cap XY\) and draw the lines \(BP\) and \(CP\). The line \(AP\) is the diagonal of the rectangle in the corner of the tiled floor. Since \(BP\) and \(CP\) meet \(AP\) at the point \(P\) on the horizon line \(XY\), then they are projections of lines parallel to the diagonal, and therefore they are the diagonals of the other rectangles of the tiled floor.<br /><br />
+Let \(B' = BP \cap CX\) and \(C' = CP \cap BY\). Draw the line \(B'Y\) and let \(D' = B'Y \cap AP\). We expect that the points \(C', D'\) and \(X\) will be collinear, since the sides \(AB\), \(CD\) and \(C'D'\) are projections of parallel lines, and should therefore intersect at the point \(X\) on the horizon line. This is the original problem that motivated Desargues to prove his theorem. Below are two different proofs that \(C', D'\) and \(X\) are collinear.<br /><br /> 
+
+<CENTER>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/uzV2kbSj/width/926/height/570/border/888888/sri/true/sdz/true" width="926px" height="570px" style="border:0px;"> </iframe>
+</CENTER>
+<br />
+
+<b>First proof.</b> Consider the triangles \(\Delta ABC\) and \(\Delta DB'C'\) (coloured blue in the diagram below). They are in perspective from the point \(P\), and so Desargues' theorem shows that they are in perspective from a line. Since \(X = AB \cap DB'\) and \(Y = AC \cap DC'\) then the intersection of the third pair of sides \(BC \cap B'C'\) must lie on the line \(XY\). <br /><br />
+
+Now consider the triangles \(\Delta BCD\) and \(\Delta B'C'D'\). They are also in perspective from the point \(P\), and so Desargues' theorem shows that they are in perspective from a line. Since \(Y = BD \cap B'D'\) and we just showed that \(BC \cap B'C'\) lies on the line \(XY\), then \(DC \cap D'C'\) also lies on the horizon line \(XY\). In our original construction we defined \(D\) as the intersection of \(CX\) and \(BY\). In particular, \(D\) is on the line \(CX\) and so \(DC\) intersects the horizon line at a unique point \(X\), therefore we must have \(X = DC \cap D'C'\).
+
+
+<CENTER>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/rWqaNtfJ/width/926/height/570/border/888888/sri/true/sdz/true" width="926px" height="570px" style="border:0px;"> </iframe>
+</CENTER> 
+<br />
+
+
+The proof above uses Desargues' theorem on two pairs of triangles in perspective from the point \(P\) on the horizon. We can also prove that \(C', D'\) and \(X\) are collinear using the same idea with a different pair of triangles which are in perspective from the point \(Y\) on the horizon.<br /><br />
+
+<b>Second proof.</b> Consider the triangles \(\Delta A B B'\) and \(\Delta C D D'\) (coloured blue in the diagram below). Since they are in perspective from the point \(Y\) then Desargues' theorem shows that they are in perspective from a line. The sides \(BB'\) and \(DD'\) meet at the point \(P\), and the sides \(AB\) and \(CD\) meet at the point \(X\). If we let \(Q = AB' \cap CD'\), then Desargues' theorem shows that \(Q\) lies on the horizon line \(PX = XY\).<br /><br />
+
+Now consider the triangles \(\Delta ADB'\) and \(\Delta CC'D'\) (coloured orange in the diagram below). They are also in perspective from the point \(Y\), and so Desargues' theorem shows that they are in perspective from a line. We know that \(P = AD \cap CC'\) and we just showed that \(Q = AB' \cap CD'\) lies on the horizon line. Therefore Desargues' theorem implies that the intersection of \(B'D\) and \(D'C'\) also lies on the horizon line \(PQ\). In our original construction, we defined \(B'\) as the intersection of the lines \(DX = CX\) and \(BP\). In particular, \(B'\) is a point on the line \(DX\), and so \(B'D\) intersects the horizon line at a unique point \(X\), therefore \(X = B'D \cap D'C'\).<br /><br />
+<CENTER>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/HCzpDbzT/width/926/height/570/border/888888/sri/true/sdz/true" width="926px" height="570px" style="border:0px;"> </iframe>
+</CENTER>
+<br />
+
+
+
+
+
+
+<a href="http://www.vim.org/"><img align="right" src="/~graeme/files/icons/anim_written_in_vi.gif" border="0"></a>
+
+
+</BODY>
+

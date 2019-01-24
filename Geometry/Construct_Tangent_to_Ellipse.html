@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>Constructing the tangent line to an ellipse</TITLE>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+</HEAD>
+<BODY>
+<h1 align="center">Constructing tangent lines to an ellipse</h1>
+
+<p align="right"><a href="index.html">Back to Geometry homepage</a></p>
+
+
+<h2 align="left">Constructing the tangent at a point on the ellipse</h2>
+
+Below is an ellipse with focal points \(F_1\) and \(F_2\), and a point \(P\) on the ellipse. The focal points and the point \(P\) are not used in the construction, but you can click and drag them to change the shape and size of the ellipse.<br />
+Given a point \(A\) on the ellipse, we want to construct the tangent at \(A\). To do this, construct points \(B\), \(C\), \(D\) and \(E\) on the ellipse, and draw the lines \(AB\), \(BC\), \(CD\), \(DE\) and \(EA\). Define \(X\) to be the intersection of \(AB\) and \(DE\) and define \(Y\) to be the intersection of \(BC\) and \(EA\).<br />
+Pascal's theorem says that the tangent at \(A\) will intersect the line \(CD\) at a point on the line \(XY\). Equivalently, the intersection of \(XY\) and \(CD\) is on the tangent at \(A\). Therefore, define \(Z\) to be the intersection of \(XY\) and \(CD\). Pascal's theorem guarantees that \(AZ\) will be tangent to the ellipse at \(A\).<br /><br />
+<b>Remark.</b>
+<ul>
+<li> Since Pascal's theorem works for any conic, then the same construction will also work for a hyperbola or parabola.
+<li> (For interest) This construction only uses a ruler, and not a compass. Therefore it is an example of a construction that works in projective geometry (i.e. the construction is preserved by any projective transformation). To make it purely projective then we should define the ellipse as the conic passing through five given points, rather than using the focal points (which are not preserved by projective transformations).
+</ul>
+<br />
+<center>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/ajyDc7dz/width/797/height/541/border/888888/rc/false/ai/false/sdz/true/smb/false/stb/false/stbh/true/ld/false/sri/true/at/auto" width="797px" height="541px" style="border:0px;"> </iframe></center>
+
+<h2 align="left">Constructing the tangent from a point outside the ellipse</h2>
+
+Now consider a point \(P\) outside the ellipse. Suppose for now that \(X\) is a point on the ellipse such that \(PX\) is tangent to the ellipse (we will show how to construct \(X\) below). Define \(F_1'\) to be the reflection of \(F_1\) across the tangent line. The optical property of the ellipse says that a straight line \(F_1 X\) will reflect off the tangent and pass through \(F_2\). Equivalently, the points \(F_2\), \(X\) and \(F_1'\) are collinear.<br />
+Since \(F_1'\) is the reflection of \(F_1\) across the line \(PX\), then \(|F_1P| = |F_1'P|\). We also know that \(|F_1X|=|F_1'X|\), and so \(|F_1' F_2| = |F_1' X| + |X F_2| = |F_1X|+|XF_2|\), which is independent of \(X\) (the sum of the distances from the focal points to a point on the ellipse is constant).<br />
+Now we can construct \(X\). The triangle \(\Delta PF_2F_1'\) has three known sidelengths \(PF_2\) (given in the problem), \(F_2 F_1'\) (computed above) and \(PF_1' = PF_1\) (given in the problem). We also know the positions of \(P\) and \(F_2\). Therefore we can construct the triangle by <a href="http://aleph0.clarku.edu/~djoyce/java/elements/bookI/propI22.html">Euclid Prop. I.22</a>, and hence we can construct the point \(F_1'\). Therefore we can construct \(X\) as the intersection of \(F_1'F_2\) with the ellipse.<br />
+Note that there are two choices of triangle \(\Delta PF_2F_1'\) (one is a reflection of the other across the line \(PF_2\)), and so there is also another tangent line \(PY\).<br /><br />
+<center>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/eJjq9JEx/width/734/height/570/border/888888/rc/false/ai/false/sdz/true/smb/false/stb/false/stbh/true/ld/false/sri/true/at/auto" width="734px" height="570px" style="border:0px;"> </iframe></center>
+
+<h2>Another construction of a tangent line from an external point (for interest)</h2>
+
+The previous construction uses a compass to construct the triangle \(\Delta PF_2 F_1'\), and so it is not a purely projective construction since there is no notion of a circle in projective geometry (we are only allowed to use a ruler). Therefore it is natural to ask whether there is a construction which uses only a ruler and therefore works in projective geometry.<br />
+The following construction uses only a ruler, but proving that it works requires some knowledge of the <a href="https://en.wikipedia.org/wiki/Pole_and_polar">pole and polar</a> which we will not cover in class.<br /><br />
+
+Given a conic through five points \(A\), \(B\), \(C\), \(D\) and \(E\), choose two points \(Q\) and \(R\) on the conic. Let \(U\) be the intersection of \(PR\) with the conic, and let \(T\) be the intersection of \(PQ\) with the conic. Define \(W\) as the intersection of \(UT\) with \(RQ\), and \(Z\) as the intersection of \(RT\) with \(UQ\). Then define the points \(X\) and \(Y\) as the intersection of the line \(WZ\) with the conic. The lines \(PX\) and \(PY\) are then tangent to the conic.<br />
+<br />
+<center>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/zpe7Zn3p/width/775/height/516/border/888888/rc/false/ai/false/sdz/true/smb/false/stb/false/stbh/true/ld/false/sri/true/at/auto" width="775px" height="516px" style="border:0px;"> </iframe></center>
+
+</BODY>

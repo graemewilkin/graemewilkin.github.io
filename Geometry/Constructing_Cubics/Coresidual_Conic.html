@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>The coresidual of four points on a cubic</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">The coresidual of four points on a cubic</h1>
+
+<p align="right"><a href="../index.html">Back to Geometry homepage</a></p>
+<p align="right"><a href="Cubic_Nine_Points.html">Back to Cubics main page</a></p>
+
+
+Consider a cubic curve in the projective plane, and fix four points \(D\), \(E\), \(F\) and \(G\) on the curve. These four points define a pencil of conics, and Bezout's theorem tells us that each conic intersects the cubic in six points (counting multiplicity). Given a conic in this pencil, let \(X\) and \(Y\) denote the remaining two points of intersection. A special case of Sylvester's <i>theory of coresiduation</i> says that there is a unique point \(K\) on the cubic (determined by \(D,E,F,G\)) such that \(X\), \(Y\) and \(K\) are all collinear. The point \(K\) is called the <i>coresidual</i> of the four points \(D,E,F,G\) with respect to the cubic curve.<br /><br />
+
+This is illustrated in the diagram below. The curve is a cubic through the nine points \(A,B,C,D,E,F,G,H,I\) and the orange curve is a conic through \(D,E,F,G\) as well as a fifth point \(X\). You can see that the line \(KX\) intersects the cubic at the remaining intersection point of the conic and the cubic.<br /><br />
+
+You can click and drag the point \(X\) to move it along the cubic, thus changing the choice of conic in the pencil through \(D,E,F,G\). You can also move the points \(A,B,C,D,E,F,G,H,I\) to change the cubic curve. The applet will automatically recalculate the position of the coresidual \(K\).<br />
+
+
+<CENTER>
+<div id="ggb-element"></div> 
+</CENTER>
+
+<script>  
+    var ggbApp = new GGBApplet({"appName": "geometry", "width": 900, "height": 800, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "material_id" : "dxwfbhx4"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp.inject('ggb-element');
+    });
+</script>
+
+<br />
+
+The original proof of the existence of the coresidual was done in terms of the equations defining the cubic and conic. There are a number of ways to prove this using modern methods, one of which is given below. For convenience we will abuse the notation slightly; \(H\) is used to denote a hyperplane divisor, rather than points on the cubic as in the diagram above.<br /><br />
+
+Let \(\Sigma\) denote the cubic curve. A conic through the points \(D,E,F,G\) defines a meromorphic function on \(\Sigma\), denoted \(f_X \in \mathcal{M}(\Sigma)\), which has zeros at the points of intersection of the two curves \(D,E,F,G,X,Y\) and six poles (counting multiplicity) at the points at infinity. Given a different conic in the pencil which intersects \(\Sigma\) at \(D,E,F,G,X',Y'\), we have a different meromorphic function \(f_{X'}\), for which the order of the poles at the points at infinity is the same as that for \(f_X\). Therefore the function \(g_{X,X'} = \frac{f_X}{f_{X'}}\) is a globally defined meromorphic function on \(\Sigma\) with zeros at \(X,Y\) and poles at \(X',Y'\). Another way to say this is that the effective divisors \(X+Y\) and \(X'+Y'\) are linearly equivalent, or that every conic in the pencil defines a divisor \(X'+Y'\) in the degree two linear system |X+Y|.<br /><br />
+
+We now claim that the pencil of conics defines a <i>complete</i> linear system. The pencil is parametrised by \(\mathbb{P}^1\), and a calculation using Riemann-Roch shows that \(h^0(\mathcal{O}_\Sigma[X+Y]) = 2\). Therefore \(|X+Y| \cong \mathbb{P}^1\) and so the linear system in \(|X+Y|\) defined by the pencil of conics is in fact all of \(|X+Y|\). <br /><br />
+
+Let \(H\) denote a hyperplane divisor for the embedding \(\Sigma \subset \mathbb{P}^2\). Since a cubic curve is isomorphic to its Jacobian, then there exists a unique point \(K \in \Sigma\) such that \(\mathcal{O}_\Sigma[X+Y+K] \cong \mathcal{O}_\Sigma[H]\). Therefore, for any \(X'+Y' \in |X+Y|\), the divisor \(X'+Y'+K\) is a hyperplane divisor. Equivalently, the points \(X',Y',K\) are collinear, which is exactly what we wanted to show.<br /><br />
+
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<TITLE>The Cayley-Bacharach theorem for cubic curves</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">The Cayley-Bacharach theorem for cubic curves</h1>
+
+<p align="right"><a href="../index.html">Back to Geometry homepage</a></p>
+<p align="right"><a href="Cubic_Nine_Points.html">Back to Cubics main page</a></p>
+
+Let \(\Sigma\) be a fixed cubic curve in the plane, and choose eight points \(A,B,C,D,E,F,G,H \in \Sigma\). We also require that these points be in "general position", which here means that no four points can be on a line, and no seven can be on a conic (note that these two conditions both say that the number of intersections cannot exceed that predicted by <a href="https://en.wikipedia.org/wiki/B%C3%A9zout%27s_theorem">Bezout's theorem</a>, or that we cannot choose too many points on an irreducible component of \(\Sigma\)). <br /><br />
+
+These eight points determine a pencil of cubics passing through these eight points, and the Cayley-Bacharach theorem says that any cubic in this pencil will also pass through a fixed ninth point \(N\) on the original cubic, which is completely determined by \(A,B,C,D,E,F,G,H\). For this reason, the theorem is sometimes called the "\(8 \Rightarrow 9\) theorem".<br /><br />
+
+There is a nice explanation and a proof on <a href="https://terrytao.wordpress.com/2011/07/15/pappuss-theorem-and-elliptic-curves/">Terry Tao's blog</a>, including a proof that <a href="../Pappus.html">Pappus' theorem</a> and <a href="../Pascal.html">Pascal's theorem</a> both follow from special cases of the Cayley-Bacharach theorem. There is a more detailed description of the history and modern developments <a href="http://www.msri.org/~de/papers/pdfs/1996-001.pdf">here</a>.<br /><br />
+
+The diagram below shows the cubic \(\Sigma\) (coloured in green) passing through the eight points \(A,B,C,D,E,F,G,H\) as well as the point \(I\). The blue cubic also passes through these eight points and also the point \(J\). The two cubics have a ninth intersection at the point \(N\). <br /><br />
+
+By clicking and dragging the points \(I\) and \(J\), you can change the two cubic curves and see how the ninth point \(N\) (which only depends on the eight points \(A,B,C,D,E,F,G,H\)) stays in the same position.<br /> 
+<CENTER>
+<div id="ggb-element"></div> 
+</CENTER>
+
+<script>  
+    var ggbApp = new GGBApplet({"appName": "geometry", "width": 900, "height": 800, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "cyg74kvb"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp.inject('ggb-element');
+    });
+</script>
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<TITLE>The coresidual of seven points on a cubic curve</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">The coresidual of seven points on a cubic curve</h1>
+
+<p align="right"><a href="../index.html">Back to Geometry homepage</a></p>
+<p align="right"><a href="Cubic_Nine_Points.html">Back to Cubics main page</a></p>
+
+Consider a cubic curve in the projective plane, and fix seven points \(A,B,C,D,E,F,G\) on the cubic. Then any other cubic curve through these seven points will intersect the original cubic at two other points, call them \(X\) and \(Y\). Then a special case of Sylvester's <i>theory of coresiduation</i> shows that there is a unique point \(P\) on the cubic such that \(X\), \(Y\) and \(P\) are collinear.<br /><br />
+
+You can see this in the diagram below. The black curve is a cubic through the points \(A,B,C,D,E,F,G,H,I\) and the point \(P\) is the coresidual of \(A,B,C,D,E,F,G\) with respect to this curve. The blue curve is also a cubic passing through \(A,B,C,D,E,F,G\), as well as \(J\) and a point \(X\) on the black curve. Then the theory of coresiduation guarantees that a line through \(X\) and the coresidual \(P\) will pass through the other point of intersection of the two cubics. You can verify this for yourself by moving the points around the diagram. <br /><br />
+
+The diagram also contains the point \(P'\), which is the coresidual of \(A,B,C,D,E,F,G\) with respect to the blue cubic curve. Again, the theory of coresiduation guarantees that the line \(XP'\) will pass through the other point of intersection of the two curves. Therefore we see that \(X\), \(P\) and \(P'\) are always collinear, which again you can verify my moving the points around the diagram.<br /><br />
+<CENTER>
+<div id="ggb-element"></div> 
+</CENTER>
+
+<script>  
+    var ggbApp = new GGBApplet({"appName": "geometry", "width": 900, "height": 800, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "amt8bza5"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp.inject('ggb-element');
+    });
+</script>
+
+<br />
+
+The proof of this theorem is very similar to the proof for the <a href="Coresidual_Conic.html">coresidual of four points on a cubic</a> (where we study the intersection of a cubic with a conic). Any other cubic curve passing through \(A,B,C,D,E,F,G\) determines a meromorphic function on the original cubic curve with zeros at \(A,B,C,D,E,F,G\) and the other two points of intersection \(X,Y\), and a total of nine poles at the points on the line at infinity. Varying this cubic will produce a new pair of points \(X',Y'\), and a similar proof to <a href="Coresidual_Conic.html">the case of a conic intersecting a cubic</a> shows that the effective divisors \(X+Y\) and \(X'+Y'\) are linearly equivalent. We can use another idea from the proof for the <a href="Coresidual_Conic.html">case of a conic intersecting a cubic</a>, this time to prove that in fact we obtain a complete linear system \(|X+Y|\) in this way. Since the original cubic curve is isomorphic to its Jacobian then there exists a unique point \(P\) such that \(X+Y+P\) is a hyperplane divisor, and therefore the points \(X,Y,P\) are always collinear.<br /><br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

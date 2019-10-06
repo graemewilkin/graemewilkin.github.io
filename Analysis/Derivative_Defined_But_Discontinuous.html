@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>A function whose derivative is defined, but discontinuous</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">A function whose derivative is defined, but discontinuous</h1>
+
+Below is the graph of the function \(f(x) = x^2 \sin \left( \frac{1}{x} \right) \).<br /><br />
+
+
+
+<CENTER>
+<div id="ggb-element"></div> 
+</CENTER>
+
+<script>  
+    var ggbApp = new GGBApplet({"appName": "geometry", "width": 1020, "height": 540, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "jxk9e9nq"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp.inject('ggb-element');
+    });
+</script>
+
+<br />
+
+
+The slope of the red line is \(\frac{f(x) - f(0)}{x-0} = \frac{f(x)}{x} = x \sin \left( \frac{1}{x} \right)\). 
+
+By clicking and dragging the point \(A\) you can see how the slope changes. In particular, note how the slope converges to zero as \(A\) gets closer to the origin, which illustrates that \(f'(0) = 0\).<br /><br />
+
+
+The point \(B\) is drawn with its tangent line. As you move \(B\) towards the origin, the tangent line at \(B\) oscillates wildly, and hence the derivative of the function \(f\) also oscillates wildly. This illustrates that the derivative is discontinuous, since \(\lim_{x \to 0} f'(x)\) does not exist.<br /><br />  
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="https://graemewilkin.github.io/files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+
+</BODY>

@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+<TITLE>Notes for Lecture 1: Smooth paths</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Notes for Lecture 1: Smooth paths</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+<b>Due to problems with the replay camera recording of the blackboard, I am posting these online notes from the first lecture.</b><br /><br />
+
+The topic for the first lecture is <i>space curves</i>. There are many examples of space curves appearing in real life. We listed a few examples in class.<br />
+<ul>
+<li> A car travelling along a highway.
+<li> A rollercoaster travelling along its track.
+<li> A person sliding down a waterslide.
+<li> The path of a spacecraft travelling through space.
+</ul>
+
+Note that all of these examples involve a path in three dimensional space (e.g. the highway for the car, or the track for the rollercoaster) and an object moving along the path. <br /><br />
+
+An important problem is find out what kind of forces the objects on these paths experience. (For example, this is useful for highway engineers, or rollercoaster designers). In what follows, we will ignore gravitational forces, since they are not a property of the curve itself.<br />
+
+<ul>
+<li> Acceleration/braking force. These forces are applied tangent to the space curve.
+<li> Centrifugal force. (For example, a rollercoaster travelling around a loop experiences centrifugal forces.) These forces are caused by the <i>curvature</i> of the space curve.
+<li> Twisting force. (For example, a rollercoaster moving from a straight line into a corkscrew experiences a twisting force.) These forces are caused by the <i>torsion</i> of the space curve.
+</ul>
+
+One of the main goals of the first part of the course is to precisely describe these concepts using vector calculus.<br /><br />
+
+In order to do this, we need a precise mathematical definition of what we mean by a smooth path in space.<br /><br />
+
+<b>Definition.</b> (Smooth path)<br />
+A <i>smooth path</i> in space is a smooth vector-valued function \(p : I \to \mathbb{R}^3\), where \(I \subset \mathbb{R}\) is an interval of positive length. <br />
+The image \(p(I) \subset \mathbb{R}^3\) is called the <i>track</i>, and we say that the function \(p\) <i>parametrises the track</i>. We can write this parametrisation in coordinates as \(p(t) = (x(t),y(t),z(t))\) for functions \(x,y,z : I \to \mathbb{R}\).<br />
+
+<br />
+
+<b>Remarks.</b>
+<ul>
+<li> A <i>smooth</i> function \(p : I \to \mathbb{R}^3\) is one for which the derivatives \(\frac{d^r p}{dt^r}\) exist for all \(r \in \mathbb{N}\).
+
+<li> In order to differentiate functions defined on an interval \(I \subset \mathbb{R}^3\), we need the interval to be open. If our smooth path is defined on an interval \(I\) which is not open, then the understanding is that the path can be extended to an open interval containing \(I\).
+</ul>
+
+<b>Examples.</b>
+<ol type="a">
+<li> <b>(Circle)</b> Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (r \cos t, r \sin t, 0)\). This defines a smooth path whose track is a circle of radius \(r\) in the \(xy\) plane. 
+<li> <b>(Graph of a function)</b> Let \(f : \mathbb{R} \rightarrow \mathbb{R}\) be a smooth function. Then \(p : \mathbb{R} \to \mathbb{R}^3\) given by \(p(t) = (t, f(t), 0) \) defines a smooth path whose track is the graph of \(f\) in the \(xy\) plane.
+<li> <b>(Helix)</b> Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (r \cos t, r \sin t, ct\). This defines a smooth path whose track is a <i>helix</i> in \(\mathbb{R}^3\).
+</ol>
+
+
+The last example of the helix is illustrated in the following diagram. You can click and drag the picture to view the helix from different angles.
+
+<CENTER>
+<div id="ggb-element"></div> 
+</CENTER>
+
+<script>  
+    var ggbApp = new GGBApplet({"appName": "geometry", "width": 988, "height": 770, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "phbrubme"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp.inject('ggb-element');
+    });
+</script>
+
+<br />
+
+In order to study the geometry of these curves, we first need to define the tangent vector. <br />
+At each point of a smooth path \(p : I \rightarrow \mathbb{R}^3\), we can take the derivative of \(p\). Since \(p\) is smooth, then this defines a smooth function \(p' = \frac{dp}{dt} : I \rightarrow \mathbb{R}^3\). If we write the path in coordinates as \(p(t) = (x(t), y(t), z(t))\), then the derivative is \(p'(t) = (x'(t), y'(t), z'(t))\).<br /><br />
+
+
+<b>Definition.</b> (Tangent vector)<br />
+The <i>tangent vector</i> of a smooth path \(p : I \rightarrow \mathbb{R}^3\) is the derivative \(p' : I \rightarrow \mathbb{R}^3\). <br /><br />
+
+<b>Note.</b> We can think of the tangent vector as the <i>velocity</i> of an object travelling along the smooth path \(p(t)\).<br />
+
+As we saw earlier, any acceleration/braking forces are applied in a direction tangent to the curve.<br /><br />
+
+The following picture shows the helix with the tangent vector. You can click and drag the basepoint of the vector to move it around the curve.
+
+
+<CENTER>
+<div id="ggb-element2"></div> 
+</CENTER>
+
+<script>  
+    var ggbApp2 = new GGBApplet({"appName": "geometry", "width": 988, "height": 770, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "jhrbmqw2"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp2.inject('ggb-element2');
+    });
+</script>
+
+<b>Next time.</b><br />
+We will compute some examples of tangent vectors to smooth paths, then talk about regular and singular values of smooth paths and how to reparametrise a smooth path.<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

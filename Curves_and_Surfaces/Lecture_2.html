@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+<TITLE>Notes for Lecture 2: Reparametrising smooth paths</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Notes for Lecture 2: Reparametrising smooth paths</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+<b>Due to problems with the replay camera recording of the blackboard, I am posting these online notes from the second lecture.</b><br /><br />
+
+Recall from <a href="Lecture_1.html">Lecture 1</a> that we defined the concept of a smooth path and studied some examples. Today's topic is <i>reparametrising smooth paths</i>. <br />
+
+First we will consider some examples to motivate the definitions from today's lecture, and also the next lecture on arclength parametrisations.<br />
+Given a smooth path \(p : I \rightarrow \mathbb{R}\), recall that the <i>track</i> is the image \(p(I) \subset \mathbb{R}^3\). Last time we defined the tangent vector \(p'(t) \in \mathbb{R}^3\), and we would like to know when this defines a tangent line to the track of our smooth path. The following examples show that this does not always happen, even when the path is smooth.<br /><br />
+
+<b>Example 1.</b> (The tangent line to the track is not defined, because the tangent vector is zero)<br />
+Let \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) be a smooth path given by \(p(t) = (t^3, t^2, 0)\). The diagram below shows the track of this path, together with the tangent vector at each point.<br />
+
+
+The tangent vector is \(p'(t) = (3t^2, 2t, 0)\), and when \(t=0\) we have \(p'(0) = (0,0,0)\). Therefore the tangent vector is zero at the origin. Note also that the track forms a cusp at the origin, and therefore there is no unique tangent line.<br />
+Therefore, we have seen in this example that <i>there is no guarantee that a unique tangent line exists if the tangent vector is zero</i><br />
+
+<br />
+
+In the diagram below, you can click and drag the slider to move the point \(A\) on the curve. The tangent vector is coloured in blue, and you can see how this vanishes when the parameter \(t = 0\).<br />
+
+<CENTER>
+<div id="ggb-element1"></div> 
+</CENTER>
+
+
+<script>  
+    var ggbApp = new GGBApplet({"appName": "geometry", "width": 988, "height": 500, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "gr7cbpxt"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp.inject('ggb-element1');
+    });
+</script>
+
+<br />
+
+<b>Example 2.</b> (The curve crosses over itself, but the tangent vector is non-zero)<br />
+Let \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) be a smooth path given by \(p(t) = (t^3-t, t^2, 0)\). The diagram below shows the track of this path, together with the tangent vector at each point.<br />
+
+We can see from the diagram that the curve crosses over itself (this is called a <i>node</i> of the curve), and we can verify this mathematically by noting that \(p(-1) = (0, 1, 0) = p(1)\).<br />
+
+The tangent vector is \(p'(t) = (3t^2-1, 2t, 0)\). In particular, we see that \(p'(-1) = (0, -2, 0)\) and \(p'(1) = (0,2,0)\). You can also see this in the picture below by clicking and dragging the slider to move the tangent vector around the curve. Note that the tangent vector does not vanish for any value of \(t\), and therefore the curve is regular.<br />
+
+<CENTER>
+<div id="ggb-element2"></div> 
+</CENTER>
+
+
+<script>  
+    var ggbApp2 = new GGBApplet({"appName": "geometry", "width": 988, "height": 500, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "rckc7xmw"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp2.inject('ggb-element2');
+    });
+</script>
+
+<b>Example 3.</b> (Generalisation of the previous two examples)<br />
+Let \(k \in \mathbb{R}\) be a constant, and let \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) be a smooth path given by \(p(t) = (t^3 - kt, t^2, 0)\). The diagram below shows this path for different values of \(k\) (click and drag the slider to change the value of \(k\) and to move the point \(A\) and its tangent vector along the curve). <br />
+
+<CENTER>
+<div id="ggb-element3"></div> 
+</CENTER>
+
+
+<script>  
+    var ggbApp3 = new GGBApplet({"appName": "geometry", "width": 988, "height": 500, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "h9wzjhw4"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp3.inject('ggb-element3');
+    });
+</script>
+
+
+<br />
+
+<b>Definition.</b> (Regular and singular values)<br />
+Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth path. A parameter value \(t_0 \in I\) is <i>singular</i> or <i>critical</i> if \(p'(t_0) = 0\). In this case we say that \(p(t_0) \in \mathbb{R}^3\) is <i>singular</i> or <i>critical</i>.<br />
+A parameter value \(t_0 \in I\) is <i>regular</i> if \(p'(t_0) \neq 0\) (i.e. it is not singular), in which case \(p(t_0)\) is a <i>regular point</i>.<br />
+
+A smooth path \(p : I \rightarrow \mathbb{R}^3\) is <i>regular</i> if all its points are regular.<br />
+
+<br />
+
+<b>Remark.</b> Example 1 above has a singular point at \(t=0\). Example 2 above is a regular path.<br />
+
+<br />
+
+<b>Example.</b> (The track looks smooth, although the path has a singular point)<br />
+Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (t^3, t^6, 0)\). Then \(p'(t) = (3t^2, 6t^5, 0)\), and so \(p'(0) = (0,0,0)\), therefore the path has a singular point.<br />
+
+Note that the track is the curve \(y = x^2\) in the \(xy\) plane, which is the same track as the smooth regular path \(p:\mathbb{R}\rightarrow \mathbb{R}\) given by \(q(u) = (t, t^2, 0)\).<br /><br />
+
+<b>Remark.</b> This example shows that you cannot tell whether a path has a singular point just by observing its track. You must check to see whether \(p'(t_0) = 0\) has a solution.<br /> 
+<br />
+
+<h3>Reparametrisations</h3>
+
+Let \(I, J \subset \mathbb{R}\) be positive length intervals. If \(p : I \rightarrow \mathbb{R}^3\) and \(q : J \rightarrow \mathbb{R}^3\) are smooth paths for which \(q(u) = p(t(u))\) for some smooth surjective (onto) function \(t : J \rightarrow I\) such that \(t'(u) \neq 0\) for all \(u \in J\), then we say that \(q(u)\) is a <i>reparametrisation</i> of \(p(t)\).<br />
+
+Note that since \(t'(u) \neq 0\) for all \(u \in J\), then (since \(t'\) is a continuous function) we are in one of the two following cases:<br />
+<ul>
+<li> If \(t'(u) \gt 0\) for all \(u \in J\), then we say that the reparametrisation is <i>orientation-preserving</i>.<br />
+<li> If \(t'(u) \lt 0\) for all \(u \in J\), then we say that the reparametrisation is <i>orientation-reversing</i>.<br />
+</ul>
+
+<b>Remark.</b> Since \(t'(u) \neq 0\) for all \(u \in J\), then \(t : J \rightarrow I\) is injective (or one-to-one). This condition means that the path cannot "double back" on itself.<br />
+<br />
+
+<b>Example 1.</b> (Reparametrisations of the helix)<br />
+
+Define \(p : [0,2\pi] \rightarrow \mathbb{R}^3\) by \(p(t) = (\cos t, \sin t, ct)\). This is the familiar example of the helix from Lecture 1. Now define \(q : [0,\pi] \rightarrow \mathbb{R}^3\) by \(q(u) = (\cos(2u), \sin(2u), 2cu)\). This is a smooth path with the same track as \(p\), and the two paths are related by \(q(u) = p(2u)\). The reparametrisation function is \(t(u) = 2u\). <br />
+
+Define the smooth path \(r : [-2\pi, 0] \rightarrow \mathbb{R}^3\) by \(r(v) = (\cos (-v), \sin(-v), -cv) = (\cos v, -\sin v, -cv)\). This is another smooth path with the same track as \(p\), and the two paths are related by the orientation-reversing reparametrisation \(r(v) = p(-v)\), where \(t(v) = -v\).<br />
+
+<br />
+
+<b>Example 2.</b> (Reparametrisations of the graph of \(y = e^x\))<br />
+Define \(p : [1,4] \rightarrow \mathbb{R}^3\) by \(p(t) = (t, e^t, 0)\). Now define \(q : [1,2] \rightarrow \mathbb{R}^3\) by \(q(u) = (u^2, e^{u^2}, 0\). Then \(q\) is a reparametrisation of \(p\), since the two paths are related by \(q(u) = p(u^2)\), where the reparametrisation is \(t(u) = u^2\). <br />
+Note that it is tempting to extend this reparametrisation to the paths \(p : [0,4] \rightarrow \mathbb{R}^3\), \(p(t) = (t, e^t, 0)\) and \(q : [0,2] \rightarrow \mathbb{R}^3\), \(q(u) = (u^2, e^{u^2}, 0)\). In this case, the function \(t : [0,2] \rightarrow [0,4]\), \(t(u) = u^2\) satisfies \(t'(0) = 0\), and so it is not a reparametrisation by our above definition. It is worth noting that \(p\) is a regular path, while \(q\) has a singular point at \(u=0\). <br />
+
+<br />
+
+Note that the chain rule shows that \(q'(u) = \frac{dq}{du} = \frac{d}{du} p(t(u)) = \frac{dp}{dt} \cdot \frac{dt}{du} = p'(t) t'(u)\). Since \(t'(u) \neq 0\) (by our definition of a reparametrisation) then we see that \(p'(t) \neq 0\) if and only if \(q'(u) \neq 0\). In particular, if \(p\) is regular, then every reparametrisation of \(p\) is also regular.<br />
+
+<br />
+
+Using this result, one can show that reparametrisation defines an equivalence relation on the set of smooth paths. Therefore we can talk about equivalence classes of smooth paths, which leads into the following definition.<br /><br />
+
+<b>Definition.</b> (Smooth curves)<br />
+A <i>smooth curve</i> is an equivalence class of smooth paths, any two of which are equal after some reparametrisation.<br />
+A smooth curve is <i>regular</i> if all its parametrisations are regular.<br />
+An <i>oriented smooth curve</i> is an equivalence class of smooth paths up to orientation-preserving reparametrisation.<br />
+
+<br />
+
+
+<b>Next time.</b><br />
+We will compute some examples of tangent vectors to smooth paths, then talk about regular and singular values of smooth paths and how to reparametrise a smooth path.<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

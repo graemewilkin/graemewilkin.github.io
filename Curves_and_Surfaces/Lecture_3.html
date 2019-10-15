@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>Notes for Lecture 3: Arclength</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Notes for Lecture 3: Arclength</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+<b>Due to problems with the replay camera recording of the blackboard, I am posting these online notes from the third lecture.</b><br /><br />
+
+Recall from <a href="Lecture_2.html">Lecture 2</a> that we defined the concepts of <i>regular</i> and <i>singular</i> points and studied the examples of cuspidal and nodal cubics, before defining the notion of a <i>reparametrisation</i> of a smooth path. Today we will define and study a special parametrisation known as the <i>arclength parametrisation</i>. <br /><br />
+
+<h2>Arclength</h2>
+
+<b>Definition.</b> (Arclength of a smooth path)<br />
+Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth path. Given \(t_1, t_2 \in I\), the <i>arclength</i> from \(p(t_1)\) to \(p(t_2)\) is \[s(t_2, t_1) = \int_{t_1}^{t_2} |p'(t)| \, dt .\]<br />
+
+If we fix a point \(t_0 \in I\), then we can consider arclength as a function \(s : I \rightarrow \mathbb{R}\) given by \[s(t, t_0) = \int_{t_0}^t |p'(v)| \, dv ,\] where \(v\) is a dummy variable for integration in the above formula. If the path \(p : I \rightarrow \mathbb{R}\) is smooth, then \(|p'| : I \rightarrow \mathbb{R}_{\geq 0}\) is continuous, and therefore the fundamental theorem of calculus shows that the arclength function \(s\) is \(C^1\), which means that it is differentiable with continuous first derivative.<br />
+If we try to differentiate \(s\) further then we may run into problems, since the function defining the magnitude of a vector \(| \cdot | : \mathbb{R}^3 \rightarrow \mathbb{R}_{\geq 0}\) is not differentiable at \(0\). If \(p'(t) \neq 0\) for all \(t \in I\), or equivalently the path is regular, then the arclength function is smooth. <br /><br />
+
+<b>Example 1.</b> (Circle of radius \(r\))<br />
+Let \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) be the smooth path given by \(p(t) = (r \cos t, r \sin t, 0)\). The track is the circle of radius \(r\) in the \(xy\) plane. In order to compute the arclength, note that \(p'(t) = (-r \sin t, r \cos t, 0)\), and therefore the magnitude of the vector \(p'\) is \[|p'(t)| = \sqrt{(r \sin t)^2 + (r \cos t)^2} = r .\] 
+Therefore, with respect to the parameter value \(t_0 = 0\), the arclength along the curve from \(p(0)\) to \(p(t)\) is \[s(t, 0) = \int_0^t r \, dv = rt .\]
+
+<br />
+
+<b>Example 2.</b> (Circle of radius \(r\) with a different parametrisation)<br />
+This time, let \(q : \mathbb{R} \rightarrow \mathbb{R}^3\) be the smooth path given by \(q(u) = (r \cos (u/r), r \sin (u/r), 0)\). Again, the track is the circle of radius \(r\), but this time the parametrisation has been "slowed down" by a factor of \(r\). We can compute the tangent vector \(q'(u) = (-\sin (u/r), \cos(u/r), 0)\), and its magnitude is \(|q'(u)| = \sqrt{(sin(u/r))^2 + (\cos(u/r))^2} = 1\). Therefore, the arclength from \(q(0)\) to \(q(u)\) is \[s(u, 0) = \int_0^u |q'(v)| \, dv = \int_0^u 1 \, dv = u .\]
+
+In this case, we see that the arclength \(s = s(u, 0)\) is equal to the parameter \(u\) (more generally, for any \(u_0 \in I\) we see that \(s(u, u_0) = u-u_0\)). This is a special type of parametrisation known as a <i>parametrisation by arclength</i>, which we will explore further below.<br />
+
+<br />
+
+<b>Example 3.</b> (Helix of radius \(r\) and pitch \(2 \pi c\))<br />
+
+Now consider the smooth path \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) given by \(p(t) = (r \cos t, r \sin t, ct)\) (this is the helix from <a href="Lecture_1.html">Lecture 1</a>). The tangent vector is \(p'(t) = (-r \sin t, r \cos t, c)\) and the magnitude of this vector is \[|p'(t)| = \sqrt{(r \sin t)^2 + (r \cos t)^2 + c^2} = \sqrt{r^2 + c^2} .\]
+
+Therefore, the arclength from \(p(0)\) to \(p(t)\) is \[s(t, 0) = \int_0^t |p'(v)| \, dv = \int_0^t \sqrt{r^2 + c^2} \, dv = t \sqrt{r^2 + c^2} .\]
+
+<b>Example 4.</b> (Helix of radius \(r\) and pitch \(2 \pi c\) parametrised by arclength)<br />
+
+Just as for the circle, we can reparametrise the helix so that \(s(t, t_0) = t-t_0\). We will give a general method for this in the next lecture, however for now we can consider the parametrisation \(q(u) = (r \cos (u/\sqrt{r^2+c^2}), r \sin (u/\sqrt{r^2+c^2}), c u/\sqrt{r^2+c^2})\). The tangent vector is \[q'(u) = \left(\frac{-r \sin (u/\sqrt{r^2+c^2})}{\sqrt{r^2+c^2}}, \frac{r \cos (u/\sqrt{r^2+c^2})}{\sqrt{r^2+c^2}}, \frac{c}{\sqrt{r^2+c^2}} \right) ,\]
+
+and therefore the magnitude is \[\begin{aligned} |q'(u)| & = \sqrt{ \left(\frac{-r \sin (u/\sqrt{r^2+c^2})}{\sqrt{r^2+c^2}} \right)^2 + \left(\frac{r \cos (u/\sqrt{r^2+c^2})}{\sqrt{r^2+c^2}} \right)^2 + \left( \frac{c}{\sqrt{r^2+c^2}} \right)^2} \\ & = \sqrt{ \frac{r^2 \sin^2(u/\sqrt{r^2+c^2}) + r^2 \cos^2(u/\sqrt{r^2+c^2})}{r^2 + c^2} + \frac{c^2}{r^2+c^2} } \\ & = \frac{r^2+c^2}{r^2+c^2} = 1, \end{aligned} \]
+
+Therefore the arclength is \[s(u,0) = \int_0^t |p'(v)| \, dv = \int_0^u 1 \, dv = u .\]
+
+<br />
+
+
+You may have noticed in the above examples that the arclength between two points on the curve does not change with the parametrisation. For example, the arclength around the circle in the first example is the arclength from \(t = 0\) to \(t = 2\pi\), or the arclength from \(p(0)\) to \(p(2\pi)\) which is \(2\pi r\). In the second example, one loop around the circle corresponds to a change in the parameter from \(u = 0\) to \(u = 2\pi r\), and so the arclength from \(q(0)\) to \(q(2\pi r)\) is also \(2\pi r\). <br /><br />
+
+This is a general property of reparametrisations, which we now prove.<br /><br />
+
+<b>Lemma.</b> (Arclength is preserved by reparametrisation)<br />
+
+Let \(p : I \rightarrow \mathbb{R}^3\) and \(q : J \rightarrow \mathbb{R}^3\) be smooth paths, with \(t : J \rightarrow I\) a smooth reparametrisation such that \(p(t(u)) = q(u)\). Choose parameter values \(u_1\) and \(u_2\), and let \(t_1 = t(u_1)\) and \(t_2 = t(u_2)\). Then the arclength along the path \(q(u)\) from \(q(u_1)\) to \(q(u_2)\) is equal to the arclength along the path \(p(t)\) from \(p(t_1)\) to \(p(t_2)\).<br /><br />
+
+<b>Proof.</b> <br />
+The arclength along the path \(q(u)\) from \(q(u_1)\) to \(q(u_2)\) is
+\[ \begin{aligned} 
+\int_{u_1}^{u_2} |q'(u)| \, du & = \int_{u_1}^{u_2} \left| \frac{d}{du} p(t(u)) \right| \, du \\
+ & = \int_{u_1}^{u_2} \left| \frac{d}{dt} p(t(u)) \cdot \frac{dt}{du} \right| \, du \\
+ & = \int_{u_1}^{u_2} \left| \frac{d}{dt} p(t(u)) \right| \frac{dt}{dt} \, du \\
+ & = \int_{t_1}^{t_2} \left| p'(t) \right| \, dt
+\end{aligned} \]
+which is equal to the arclength along the path \(p(t)\) from \(p(t_1)\) to \(p(t_2)\). <p align="right"><tt>q.e.d.</tt></p><br />
+
+<br />
+
+<b>Next time.</b><br />
+We will do some more examples and formalise the process of reparametrising a regular path.<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

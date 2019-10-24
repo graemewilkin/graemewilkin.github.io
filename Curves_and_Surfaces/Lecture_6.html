@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Additional pictures for Lecture 6: The Frenet frame</TITLE>
+<TITLE>Lecture 6: The Frenet frame</TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -12,12 +12,22 @@
 </HEAD>
 <BODY>
 
-<h1 align="center">Additional pictures for Lecture 6: The Frenet frame</h1>
+<h1 align="center">Lecture 6: The Frenet frame</h1>
 
 <p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
 
 
 <br />
+
+Let \(p : I \rightarrow \mathbb{R}^3\) be a curve parametrised by arclength. Recall from <a href="Lecture_5.html">Lecture 5</a> that we defined the following vectors.<br /><br />
+
+<b>Unit tangent vector.</b> \(T(s) = p'(s)\)<br />
+<b>Unit normal vector.</b> \(N(s) = \frac{T'(s)}{|T'(s)|}\)<br />
+<b>Binormal vector.</b> \(B(s) = T(s) \times N(s)\)<br />
+
+<br />
+
+These vectors are mutually orthogonal unit vectors, and therefore form a basis of \(\mathbb{R}^3\), called the <i>Frenet frame</i>. The Frenet frame captures the intrinsic geometry of the curve.<br /><br />
 
 The following picture shows the Frenet frame of the helix.
 
@@ -32,46 +42,97 @@ The following picture shows the Frenet frame of the helix.
     });
 </script>
 
+Recall that we also defined the <b>curvature vector</b> to be \(k(s) = T'(s)\), and using this we defined following scalar-valued quantities associated to a curve.<br />
+
+<b>Curvature.</b> \(\kappa(s) = |k(s)| = |T'(s)|\) (or equivalently, \(T'(s) = \kappa(s) N(s)\)<br />
+<b>Torsion.</b> \(\tau(s) = |B'(s)| = B'(s) \cdot N(s)\) (or equivalently, \(B'(s) = \tau(s) N(s)\))<br />
+
 <br />
 
-The following picture shows the helix together with its osculating plane and osculating circle.
+We also computed the curvature of a circle of radius \(r\), and found that it has constant curvature \(\kappa(s) = \frac{1}{r}\). <br /><br />
 
-<CENTER>
-<div id="ggb-element2"></div> 
-</CENTER>
+The <b>osculating plane</b> is the plane in \(\mathbb{R}^3\) passing through \(p(s)\) and spanned by the vectors \(T(s)\) and \(N(s)\). In terms of a physical object travelling through space along the curve \(p : I \rightarrow \mathbb{R}^3\), 
+the intuition behind this plane is that it contains the direction of motion (parallel to the tangent vector) and any centrifugal forces caused by turning (parallel to the normal vector).<br />
 
-<script>  
-    var ggbApp2 = new GGBApplet({"appName": "geometry", "width": 988, "height": 770, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "cufvvskm"}, true);
-    window.addEventListener("load", function() { 
-        ggbApp2.inject('ggb-element2');
-    });
-</script>
+<br />
 
-The following picture shows the graph of \(y=x^2\) in the \(xy\) plane together with its osculating circle. The point \(O\) is the centre of the osculating circle. You can click and drag the slider to move the osculating circle along the curve. 
+The osculating plane consists of all vectors \(v \in \mathbb{R}^3\) such that \(v = p(s) + \alpha T(s) + \beta N(s)\). Equivalently, \(v-p(s)\) is perpendicular to the binormal vector \(B(s)\). Therefore the equation of the osculating plane is
+\[ (v-p(s)) \cdot B(s) = 0  \]
 
-<CENTER>
-<div id="ggb-element3"></div> 
-</CENTER>
+The <b>osculating circle</b> is the circle of radius \(\frac{1}{\kappa(s)}\) which is tangent to the curve at the point \(p(s)\).<br />
 
-<script>  
-    var ggbApp3 = new GGBApplet({"appName": "geometry", "width": 800, "height": 500, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "hbge9nxg"}, true);
-    window.addEventListener("load", function() { 
-        ggbApp3.inject('ggb-element3');
-    });
-</script>
+<br />
 
-The following picture shows the graph of \(y=x^3\) in the \(xy\) plane together with its osculating circle. Again, you can click and drag the slider to move the point along the curve. Note that the osculating circle changes sides after it passes through the point of inflection. This is an example of the <i>signed curvature</i> changing sign.
+The centre of the osculating circle is \(O(s) = p(s) + \frac{1}{\kappa(s)} N(s)\). Since the radius is \(\frac{1}{\kappa(s)}\), then the equation of the osculating circle is
+\[ |v-O(s)| = \frac{1}{\kappa(s)} \]
 
-<CENTER>
-<div id="ggb-element4"></div> 
-</CENTER>
+<font color="green">Intuitively, the curvature measures how much the curve turns at a given point.</font> The osculating circle is the "circle of best fit" that approximates the curve at the point \(p(s)\).<br /><br />
 
-<script>  
-    var ggbApp4 = new GGBApplet({"appName": "geometry", "width": 988, "height": 770, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "pb5wkf5m"}, true);
-    window.addEventListener("load", function() { 
-        ggbApp4.inject('ggb-element4');
-    });
-</script>
+The picture at the following link shows the <a href="Lecture_6_Helix_Osculating_Plane.html">helix together with its osculating plane and osculating circle</a>.<br /><br />
+
+If you study the previous picture, you will notice that the osculating plane is twisting as the point moves up the helix. 
+
+You may have already noticed this in the above picture of the Frenet frame of the helix, where the twisting of the osculating plane can be seen from the twisting of the binormal vector.<br /><br />
+
+<font color="green">Intituitively, the torsion measures this twisting motion of the osculating plane.</font> If the torsion is zero, then the curve lies entirely in the osculating plane (we will prove this later). If the torsion is non-zero then the osculating plane will move around as in the above picture.<br /><br />
+
+The pictures at the following link show the <a href="Lecture_6_Osculating_Circles.html">osculating circle of the graphs of \(y=x^2\) and \(y=x^3\)</a>.<br />
+
+<br />
+
+<h3>Another formula for the torsion</h3>
+
+We can also write the torsion in terms of the scalar triple product, as follows. Recall that \(B'(s) = T(s) \times N'(s)\). Therefore
+\[ \begin{aligned}  \tau(s) & = B'(s) \cdot N(s) \\ & = N(s) \cdot (T(s) \times N'(s)) \\ & = -T(s) \cdot (N(s) \times N'(s)) \end{aligned} \]
+
+The expression on the right-hand side of the above equation is called the <i>scalar triple product</i>. Given three vectors \(a = (x_1, y_1, z_1)\), \(b = (x_2, y_2, z_2)\), \(c = (x_3, y_3, z_3)\), the scalar triple product is
+written \( [ a, b, c ] = a \cdot (b \times c)\) and has the following properties
+\[ \begin{aligned} \left[a,b,c\right] & = a \cdot (b \times c) = b \cdot (c \times a) = c \cdot (a \times b) \\ & = -a \cdot (c \times b) = b \cdot (a \times c) = c \cdot (b \times a) \\
+ & = \left| \begin{matrix} x_1 & y_1 & z_1 \\ x_2 & y_2 & z_2 \\ x_3 & y_3 & z_3 \end{matrix} \right| \end{aligned} \]
+
+
+<h3>Signed curvature</h3>
+
+For any plane in \( \mathbb{R}^3 \) there are two choices of unit normal vector, corresponding to two opposite choices of orientation. For example, the \(xy\) plane has two unit normal vectors \((0,0,1)\) and \(0,0,-1)\).  
+
+Fixing a choice of normal vector is equivalent to fixing a choice of <i>orientation</i> for the plane. Let \(\Pi\) be a plane with a fixed unit normal vector \(n\), and let \(p : I \rightarrow \Pi \subset \mathbb{R}^3\) be a curve contained in this plane which is parametrised by arclength.
+
+Since \(T(s) = p'(s)\) is tangent to \(\Pi\), then so is \(\nu(s) = n \times T(s)\). <br />
+
+<br />
+
+The <b>signed curvature</b> is the scalar \(\kappa_s(s) = p''(s) \cdot (n \times T(s)) = k(s) \cdot \nu(s)\).<br />
+
+<br />
+
+Recall that the curvature measures the amount of "turning" in the curve at the point \(p(s)\), while the signed curvature contains the additional information about the <i>direction</i> of the turning.<br />
+
+For example, if you place your right hand in \(\mathbb{R}^3\) with your thumb pointing along the unit normal vector, then the signed curvature is positive if the curve turns in the direction of your fingers. The signed curvature is negative if the curve turns in the opposite direction.<br />
+
+<br />
+
+<b>Example.</b> Consider the <a href="Lecture_6_Osculating_Circles.html">graph of \(y=x^3\)</a> in the \(xy\) plane, and choose \(n = (0,0,1)\) for the unit normal vector. Then the signed curvature is negative when \(t<0\) and positive when \(t > 0\).<br />
+
+<br />
+
+<h3>Curvature and torsion for a general parametrisation</h3>
+
+Our formulas for curvature and torsion required our curve to be parametrised by arclength. Now consider what happens for a regular curve \(p : I \rightarrow \mathbb{R}^3\) with any regular parametrisation.<br />
+
+<br />
+
+One option is to reparametrise the curve by arclength and then apply the above formulas, however unfortunately this sometimes leads to expressions that are difficult to evaluate. 
+
+The following result (see Theorem 1.13 in the <a href="Differential_Geometry_Lecture_Notes.pdf">Lecture Notes</a>) gives formulas that can be applied in any regular parametrisation.<br />
+
+<br />
+
+<b>Theorem. </b>(Curvature and torsion in any regular parametrisation)<br />
+
+Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth regular curve. Then
+\[ \begin{aligned}  k(t) & = \frac{1}{|p'|^2} \left( p'' - \frac{p' \cdot p''}{|p'|^2} p' \right) \\ \kappa(t) & = \frac{|p' \times p''|}{|p'|^3} \\ \tau(t) & = -\frac{1}{\kappa(t)^2} \frac{[p',p'',p''']}{|p'|^6} = - \frac{[p',p'',p''']}{|p' \times p''|^2} \end{aligned} \]
+
+
 
 
 

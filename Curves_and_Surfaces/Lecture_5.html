@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>
+<TITLE>Lecture 5: Curvature and torsion</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Lecture 5: Curvature and torsion</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+<br />
+
+<h3 align="left">Curvature</h3>
+
+Let \(p : I \rightarrow \mathbb{R}\) be a smooth regular curve parametrised by arclength. Since the curve is parametrised by arclength, then \(|p'(s)| = 1\) for all \(s \in I\).<br /><br />
+
+<font color="blue">The <b>unit tangent vector</b> is defined to be \(T(s) = p'(s)\)</font>.<br /><br />
+
+Since the tangent vector has unit length, then \(|T(s)|^2 = T(s) \cdot T(s) = 1\), and so \[0 = \frac{d}{ds} (T(s) \cdot T(s)) = T'(s) \cdot T(s) + T(s) \cdot T'(s) = 2T'(s) \cdot T(s) .\]
+
+Therefore \(T'(s)\) is orthogonal to \(T(s)\).<br /><br />
+
+<font color="blue">A point \(p(s)\) is a <b>point of inflection</b> if \(T'(s) = 0\)</font>.<br /><br />
+
+<font color="blue">If \(p(s)\) is not a point of inflection, then the <b>unit normal vector</b> is defined to be \(N(s) = \frac{T'(s)}{|T'(s)|}\)</font>. Note that the unit normal vector is well-defined if and only if \(p(s)\) is not a point of inflection.<br /><br />
+
+Since \(|T(s)| = 1\) is constant along the curve, then the derivative \(T'(s)\) measures how much the curve is turning, and in which direction. <br /><br />
+
+<font color="blue">The <b>curvature vector</b> is defined to be \(k(s) = T'(s)\)</font>.<br />
+<font color="blue">The <b>curvature</b> is the magnitude of the curvature vector, defined by \(\kappa(s) = |k(s)|\)</font>.<br /><br />
+
+Intuitively, the curvature measures the rate at which the tangent vector changes direction. To gain a better understanding of curvature, it is useful to compute some examples.<br /><br />
+
+<b>Example.</b> (The curvature of a circle)<br />
+Recall that \(p : \mathbb{R} \rightarrow \mathbb{R}^2\) given by \(p(s) = \left( r \cos \left(\frac{s}{r} \right), r \sin \left( \frac{s}{r} \right) \right)\) represents a circle of radius \(r\) parametrised by arclength.
+
+The unit tangent vector is \(T(s) = p'(s) = \left( -\sin \left( \frac{s}{r} \right), \cos \left( \frac{s}{r} \right) \right)\), and therefore the curvature vector is
+\[ k(s) = T'(s) = \left( -\frac{1}{r} \cos \left( \frac{s}{r} \right), -\frac{1}{r} \sin \left( \frac{s}{r} \right) \right) \]
+
+Therefore the curvature is \( \kappa(s) = |k(s)| = \frac{1}{r} \), and the unit normal vector is \(N(s) = \left( -\cos \left( \frac{s}{r} \right), -\sin \left( \frac{s}{r} \right) \right) \).<br /><br />
+
+The above example tells us that the curvature of a circle is inversely proportional to the radius. We will explore this idea further for arbitrary curves when we study the topic of the osculating circle in the next lecture.<br /><br />
+
+The next example is that of the helix, which also has constant curvature.<br /><br />
+
+<b>Example.</b> (The curvature of a helix)<br />
+Recall that \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) given by \(p(s) = \left( r \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), r \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{cs}{\sqrt{r^2+c^2}} \right)\) represents a helix parametrised by arclength.
+
+The unit tangent vector is 
+\[ T(s) = p'(s) = \left( - \frac{r}{\sqrt{r^2+c^2}} \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{r}{\sqrt{r^2+c^2}} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{c}{\sqrt{r^2+c^2}} \right) \]
+ 
+and we can differentiate again to obtain the curvature vector
+\[ k(s) = T'(s) = \left( - \frac{r}{r^2+c^2} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), -\frac{r}{r^2+c^2} \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), 0 \right) \]
+
+Therefore the curvature is \( \kappa(s) = \frac{r}{\sqrt{r^2+c^2}} \) and the unit normal vector is \(N(s) = \left( -\cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), -\sin \left( \frac{s}{\sqrt{r^2+c^2}} \right) , 0 \right)\).
+
+<h3>Torsion</h3>
+
+If \(\kappa(s) \neq 0\) so that \(p(s)\) is not a point of inflection, then the unit tangent vector and unit normal vector are orthogonal, and therefore their cross product is also a unit vector. Note that if \(p(s)\) is a point of inflection then \(N(s)\) is not well-defined.<br /><br />
+
+<font color="blue">The <b>binormal vector</b> is the unit vector \(B(s) = T(s) \times N(s)\)</font>. <br /><br />
+
+The binormal vector is a unit vector orthogonal to both \(T(s)\) and \(N(s)\), and therefore the three vectors \(T, N, B\) form an orthonormal basis for \(\mathbb{R}^3\), called the <i>Frenet frame</i> of the curve at the point \(p(s)\).<br /><br />
+
+The following picture shows the Frenet frame of the helix.
+
+<CENTER>
+<div id="ggb-element"></div> 
+</CENTER>
+
+<script>  
+    var ggbApp = new GGBApplet({"appName": "geometry", "width": 988, "height": 770, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "ny282xjz"}, true);
+    window.addEventListener("load", function() { 
+        ggbApp.inject('ggb-element');
+    });
+</script>
+
+Since the binormal vector has constant length, then the following calculation shows that \(B'(s) \cdot B(s) = 0\).
+\[0 = \frac{d}{ds} (B(s) \cdot B(s)) = B'(s) \cdot B(s) + B(s) \cdot B'(s) = 2B'(s) \cdot B(s) \]
+Therefore \(B'(s)\) is perpendicular to \(B(s)\). (Note the similarity between this calculation and the analogous result for the tangent vector.)<br /><br />
+
+We can also differentiate the definition of the binormal vector. Note that \(T'(s) = \kappa(s) N(s)\), and so \(T'(s) \times N(s) = \kappa(s) N(s) \times N(s) = 0\).
+\[ B'(s) = T'(s) \times N(s) + T(s) \times N'(s) = T(s) \times N'(s),  \]
+and so \(B'(s)\) is orthogonal to \(T(s)\). Therefore, since \(T(s), N(s), B(s)\) form an orthonormal basis, and \(B'(s)\) is orthogonal to two of the basis vectors \(T(s)\) and \(B(s)\), then it must be parallel to the third vector \(N(s)\).<br /><br />
+
+<font color="blue">The <b>torsion</b> of the curve is the function \(\tau(s)\) such that \(B'(s) = \tau(s) N(s)\)</font>.<br /><br />
+
+ 
+
+
+
+<b>Example.</b> (The torsion of the helix)<br />
+
+Continuing from the previous example, we can compute the binormal vector and hence the torsion for the helix. Recall that
+\[ T(s) = \left( - \frac{r}{\sqrt{r^2+c^2}} \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{r}{\sqrt{r^2+c^2}} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{c}{\sqrt{r^2+c^2}} \right), \quad N(s) = \left( -\cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), -\sin \left( \frac{s}{\sqrt{r^2+c^2}} \right) , 0 \right) \]
+Taking the cross product gives us the binormal vector
+\[ B(s) = T(s) \times N(s) = \left( \frac{c}{\sqrt{r^2 + c^2}} \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), -\frac{c}{\sqrt{r^2 + c^2}} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{r}{\sqrt{r^2+c^2}} \right) \]
+
+Now we can differentiate this to compute the torsion
+\[ B'(s) = \left( \frac{c}{r^2+c^2} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{c}{r^2+c^2} \sin \left( \frac{s}{r^2+c^2} \right) , 0   \right) = \frac{c}{r^2+c^2} N(s) . \]
+Therefore \(\tau(s) = \frac{c}{r^2 + c^2}\).<br /><br />
+
+<h3>Next time</h3>
+We will talk about the osculating plane and osculating circle of a curve, and use this to explain the geometric meaning of curvature and torsion. We will also state some formulas which show how to compute the curvature and torsion for any parametrisation (not necessarily a parametrisation by arclength).<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

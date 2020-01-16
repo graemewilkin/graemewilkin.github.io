@@ -19,6 +19,13 @@
 
 <br />
 
+The following picture shows a point \(P\) projected onto two different image planes. The black line is the camera baseline that joins the two camera centres \(C_1 C_2\), and the two epipoles \(E_1\) and \(E_2\) are the intersections of this line with the image planes.<br /><br />
+
+You can click and drag the point \(E_2\) to move the image plane along the camera baseline \(C_1 C_2\), and the camera centre \(C_2\) will move as well.<br /><br />
+
+Notice that the point \(Q_2\) always moves along the blue line, which is the intersection of the second image plane with the red plane (defined as the plane passing through \(P\) and the line \(C_1 C_2\)). Note that this blue line also passes through the epipolar point \(E_2\).<br /><br />
+
+As you move the image plane by dragging the epipolar point \(E_2\) far away from \(P\), the point \(Q_2\) will move closer to \(E_2\). <br /><br />
 
 
 <CENTER>
@@ -32,6 +39,9 @@
     });
 </script>
 
+For the case of a single point, this picture illustrates that when the camera centre moves along a line, the projection of the point on the image plane moves along a line radiating out from the epipolar point.<br /><br />
+
+You can see an example of this the picture of a <a href="Moving_Camera_Tetrahedron.html">projection of a tetrahedron onto a moving image plane</a> and also in the following video of <a href="https://www.youtube.com/watch?v=IWY21GYvzVE">a camera zooming along a corridor</a>.
 
 
 <p>
@@ -41,7 +51,7 @@
 <br /><br />
 
 <p>
-<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
 </p>
 
 

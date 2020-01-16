@@ -19,6 +19,16 @@
 
 <br />
 
+In the following picture, the point \(P\) is projected onto two image planes using camera centres \(C_1\) and \(C_2\) as points of perspective. <br /><br />
+
+The blue line is the <i>camera baseline</i>, defined as the line \(C_1 C_2\) through the two camera centres. The <i>epipolar points</i> \(E_1\), \(E_2\) are the points of intersection of the epipolar line with the two image planes.<br /><br />
+
+Note that the point \(R\) projects to the point \(Q_1\) on the first image plane, the same projection as \(P\) (since \(P\), \(R\) and \(C_1\) are all on the same line). By moving the point \(R\) along this line, you can see how the image \(R'\) moves on the second image plane.
+This image must lie on the line of intersection between the second image plane and the red plane (defined as the plane passing through \(C_1\), \(C_2\) and \(Q_1\)). This line of intersection is called the <i>epipolar line</i>.<br /><br />
+
+The projection onto the first image plane doesn't detect the depth (since \(P\) and \(R\) project to the same point). By projecting onto the second image plane, the position of \(R'\) on the epipolar line tells us the depth of the point \(R\).<br /><br />
+
+
 
 
 <CENTER>
@@ -41,7 +51,7 @@
 <br /><br />
 
 <p>
-<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
 </p>
 
 

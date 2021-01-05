@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Notes for Lecture 1: Smooth paths</TITLE>
+<TITLE>Smooth paths</TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -12,13 +12,11 @@
 </HEAD>
 <BODY>
 
-<h1 align="center">Notes for Lecture 1: Smooth paths</h1>
+<h1 align="center">Smooth paths</h1>
 
 <p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
 
-<b>Due to problems with the replay camera recording of the blackboard, I am posting these online notes from the first lecture.</b><br /><br />
-
-The topic for the first lecture is <i>space curves</i>. There are many examples of space curves appearing in real life. We listed a few examples in class.<br />
+The topic for this lecture is <i>space curves</i>. There are many examples of space curves appearing in real life. We listed a few examples in class.<br />
 <ul>
 <li> A car travelling along a highway.
 <li> A rollercoaster travelling along its track.
@@ -41,39 +39,36 @@ One of the main goals of the first part of the course is to precisely describe t
 In order to do this, we need a precise mathematical definition of what we mean by a smooth path in space.<br /><br />
 
 <b>Definition.</b> (Smooth path)<br />
-A <i>smooth path</i> in space is a smooth vector-valued function \(p : I \to \mathbb{R}^3\), where \(I \subset \mathbb{R}\) is an interval of positive length. <br />
+Let \(I \subset \mathbb{R}\) be an interval of positive length. A <i>smooth path</i> in space is a smooth vector-valued function \(p : I \to \mathbb{R}^3\) <br />
+
 The image \(p(I) \subset \mathbb{R}^3\) is called the <i>track</i>, and we say that the function \(p\) <i>parametrises the track</i>. We can write this parametrisation in coordinates as \(p(t) = (x(t),y(t),z(t))\) for functions \(x,y,z : I \to \mathbb{R}\).<br />
 
 <br />
 
 <b>Remarks.</b>
 <ul>
-<li> A <i>smooth</i> function \(p : I \to \mathbb{R}^3\) is one for which the derivatives \(\frac{d^r p}{dt^r}\) exist for all \(r \in \mathbb{N}\).
+<li> A <i>smooth</i> function \(p : I \to \mathbb{R}^3\) is one for which the derivatives \(\frac{d^n p}{dt^n}\) exist for all \(n \in \mathbb{N}\).
 
 <li> In order to differentiate functions defined on an interval \(I \subset \mathbb{R}^3\), we need the interval to be open. If our smooth path is defined on an interval \(I\) which is not open, then the understanding is that the path can be extended to an open interval containing \(I\).
+
+<li> There may be many different smooth paths with the same track (see the examples below).
 </ul>
 
 <b>Examples.</b>
 <ol type="a">
 <li> <b>(Circle)</b> Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (r \cos t, r \sin t, 0)\). This defines a smooth path whose track is a circle of radius \(r\) in the \(xy\) plane. 
 <li> <b>(Graph of a function)</b> Let \(f : \mathbb{R} \rightarrow \mathbb{R}\) be a smooth function. Then \(p : \mathbb{R} \to \mathbb{R}^3\) given by \(p(t) = (t, f(t), 0) \) defines a smooth path whose track is the graph of \(f\) in the \(xy\) plane.
-<li> <b>(Helix)</b> Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (r \cos t, r \sin t, ct\). This defines a smooth path whose track is a <i>helix</i> in \(\mathbb{R}^3\).
+<li> <b>(Helix)</b> Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (r \cos t, r \sin t, ct)\). This defines a smooth path whose track is a <i>helix</i> in \(\mathbb{R}^3\).<br />
+Note that the projection of the helix to the \(xy\) plane is just the circle from the first example. Therefore the track of the helix lies on the surface of the cylinder \( \{(x, y, z) \in \mathbb{R}^3 \, : \, x^2 + y^2 = r^2 \} \).
 </ol>
 
 
 The last example of the helix is illustrated in the following diagram. You can click and drag the picture to view the helix from different angles.
 
-<CENTER>
-<div id="ggb-element"></div> 
-</CENTER>
 
-<script>  
-    var ggbApp = new GGBApplet({"appName": "geometry", "width": 988, "height": 770, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "phbrubme"}, true);
-    window.addEventListener("load", function() { 
-        ggbApp.inject('ggb-element');
-    });
-</script>
-
+<center>
+<iframe scrolling="no" title="Helix in R^3" src="https://www.geogebra.org/material/iframe/id/bfua3ffe/width/791/height/602/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="602px" style="border:0px;"> </iframe>
+</center>
 <br />
 
 In order to study the geometry of these curves, we first need to define the tangent vector. <br />
@@ -81,7 +76,7 @@ At each point of a smooth path \(p : I \rightarrow \mathbb{R}^3\), we can take t
 
 
 <b>Definition.</b> (Tangent vector)<br />
-The <i>tangent vector</i> of a smooth path \(p : I \rightarrow \mathbb{R}^3\) is the derivative \(p' : I \rightarrow \mathbb{R}^3\). <br /><br />
+The <i>tangent vector</i> of a smooth path \(p : I \rightarrow \mathbb{R}^3\) at time \(t\) is the derivative \(p' : I \rightarrow \mathbb{R}^3\). <br /><br />
 
 <b>Note.</b> We can think of the tangent vector as the <i>velocity</i> of an object travelling along the smooth path \(p(t)\).<br />
 
@@ -90,19 +85,12 @@ As we saw earlier, any acceleration/braking forces are applied in a direction ta
 The following picture shows the helix with the tangent vector. You can click and drag the basepoint of the vector to move it around the curve.
 
 
-<CENTER>
-<div id="ggb-element2"></div> 
-</CENTER>
-
-<script>  
-    var ggbApp2 = new GGBApplet({"appName": "geometry", "width": 988, "height": 770, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false , "enableShiftDragZoom" : true, "enableLabelDrags" : true, "showResetIcon" : true,  "material_id" : "jhrbmqw2"}, true);
-    window.addEventListener("load", function() { 
-        ggbApp2.inject('ggb-element2');
-    });
-</script>
+<center>
+<iframe scrolling="no" title="Helix in R^3 with tangent vector" src="https://www.geogebra.org/material/iframe/id/a7zp3jzw/width/791/height/602/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="602px" style="border:0px;"> </iframe>
+</center>
 
 <b>Next time.</b><br />
-We will compute some examples of tangent vectors to smooth paths, then talk about regular and singular values of smooth paths and how to reparametrise a smooth path.<br />
+We will define and study regular and singular values of smooth paths.<br />
 
 <p>
 <a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
@@ -111,7 +99,7 @@ We will compute some examples of tangent vectors to smooth paths, then talk abou
 <br /><br />
 
 <p>
-<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
 </p>
 
 

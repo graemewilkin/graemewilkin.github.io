@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<TITLE>Regular and singular values</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Regular and singular points on smooth paths</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+Recall from <a href="Lecture_1_Smooth_Paths.html">the previous lecture</a> that we defined the concept of a smooth path and studied some examples. In this lecture we will define and study <i>regular and singular points</i> on smooth paths. <br />
+
+First recall the definition of a smooth path from the last lecture.<br /><br />
+
+<b>Definition.</b> (Smooth path)<br />
+Let \(I \subset \mathbb{R}\) be an interval of positive length. A <i>smooth path</i> in space is a smooth vector-valued function \(p : I \to \mathbb{R}^3\) <br />
+
+The <i>tangent vector</i> at the point \(p(t_0)\) is the vector \(p'(t_0) \in \mathbb{R}^3\).
+<br />
+
+If \(p'(t_0) \neq 0\) then we can define the <i>tangent line at \(p(t_0)\)</i> to the smooth path \(p : I \rightarrow \mathbb{R}^3\) as the line through the point \(p(t_0)\) which is parallel to the vector \(p'(t_0)\).<br /><br />
+
+The tangent line at \(p(t_0)\) has equation \(\ell(t) = p(t_0) + t p'(t_0)\).<br />
+
+<br />
+
+At some points the tangent line may not be well-defined. This can happen for two reasons.
+
+<ol type="i">
+
+<li> \(p'(t_0) = 0\) for some \(t_0 \in I\).
+
+<li> There are two points \(t_0, t_1 \in I\) such that \(p(t_0) = p(t_1)\). (Intuitively, the track of \(p\) crosses over itself.)
+
+</ol>
+
+<b>Example 1.</b> (The tangent line to the track is not defined, because the tangent vector is zero)<br />
+Let \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) be a smooth path given by \(p(t) = (t^3, t^2, 0)\). The diagram below shows the track of this path, together with the tangent vector at each point.<br />
+
+
+The tangent vector is \(p'(t) = (3t^2, 2t, 0)\), and when \(t=0\) we have \(p'(0) = (0,0,0)\). Therefore the tangent vector is zero at the origin. Note also that the track forms a cusp at the origin, and therefore there is no unique tangent line.<br />
+Therefore, we have seen in this example that <i>there is no guarantee that a unique tangent line exists if the tangent vector is zero</i><br />
+
+<br />
+
+In the diagram below, you can click and drag to move the point on the curve. The tangent vector is coloured in blue, and you can see how this vanishes at the point \((x, y) = (0,0)\), corresponding to the parameter value \(t = 0\).<br />
+
+<br />
+
+<center>
+<iframe scrolling="no" title="Curve with a cusp" src="https://www.geogebra.org/material/iframe/id/ykzu92nt/width/791/height/469/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="469px" style="border:0px;"> </iframe>
+</center>
+
+<br />
+
+<b>Example 2.</b> (The curve crosses over itself, but the tangent vector is non-zero)<br />
+Let \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) be a smooth path given by \(p(t) = (t^3-t, t^2, 0)\). The diagram below shows the track of this path, together with the tangent vector at each point.<br />
+
+We can see from the diagram that the curve crosses over itself (this is called a <i>node</i> of the curve), and we can verify this mathematically by noting that \(p(-1) = (0, 1, 0) = p(1)\).<br />
+
+The tangent vector is \(p'(t) = (3t^2-1, 2t, 0)\). In particular, we see that \(p'(-1) = (0, -2, 0)\) and \(p'(1) = (0,2,0)\). You can also see this in the picture below by clicking and dragging the slider to move the point around the curve. Note that the tangent vector does not vanish for any value of \(t\).<br />
+
+<br />
+
+<center>
+<iframe scrolling="no" title="Nodal curve with tangent vector" src="https://www.geogebra.org/material/iframe/id/vfgr7knd/width/791/height/469/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="469px" style="border:0px;"> </iframe>
+</center>
+
+<br />
+
+When studying properties of curves, we want to exclude examples where \(p'(t_0) = 0\) (such as the first example above).<br />
+
+Examples such as the second example are OK, since the curve has a non-zero tangent vector for each value of \(t\) in the domain.<br /><br />
+
+<b>Definition.</b> (Regular and singular values)<br />
+Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth path. A parameter value \(t_0 \in I\) is 
+
+<ol type="a">
+
+<li> <i>singular</i> or <i>critical</i> if \(p'(t_0) = 0\). In this case we say that \(p(t_0) \in \mathbb{R}^3\) is <i>singular</i> or <i>critical</i>.<br />
+
+<li> A parameter value \(t_0 \in I\) is <i>regular</i> if \(p'(t_0) \neq 0\) (i.e. it is not singular), in which case \(p(t_0)\) is a <i>regular point</i>.<br />
+
+</ol>
+
+A smooth path \(p : I \rightarrow \mathbb{R}^3\) is <i>regular</i> if all its points are regular.<br />
+
+<br />
+
+<b>Remark.</b> Example 1 above has a singular point at \(t=0\). Example 2 above is a regular path, since the tangent vector is never zero.<br />
+
+<br />
+
+<b>Example.</b> (The track looks smooth, although the path has a singular point)<br />
+Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (t^3, t^6, 0)\). Then \(p'(t) = (3t^2, 6t^5, 0)\), and so \(p'(0) = (0,0,0)\), therefore the path has a singular point.<br />
+
+Note that the track is the parabola \(y = x^2\) in the \(xy\) plane, which is the same track as the smooth regular path \(p:\mathbb{R}\rightarrow \mathbb{R}\) given by \(q(u) = (t, t^2, 0)\).<br /><br />
+
+<b>Remark.</b> This example shows that you cannot tell whether a path has a singular point just by observing its track. You must check to see whether \(p'(t_0) = 0\) has a solution.<br /> 
+<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

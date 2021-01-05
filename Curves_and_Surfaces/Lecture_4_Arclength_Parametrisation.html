@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>Parametrising smooth regular curves by arclength</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Parametrising smooth regular curves by arclength</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+Recall from the <a href="Lecture_3_Reparametrisations.html">previous lecture</a> that we defined what it means to reparametrise a smooth path and studied some examples. We then finished with the definition of a smooth regular curve. Today we will discuss how to <i>reparametrise smooth regular curves by arclength</i>. <br />
+
+<br />
+
+<b>Definition. </b>Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth path, and let \(t_0, t_1 \in I\) with \(t_0 < t_1\). The <i>arclength</i> from \(p(t_0)\) to \(p(t_1)\) is given by the formula
+\[
+s(t_1, t_0) = \int_{t_0}^{t_1} \left| p'(u) \right| \, du
+\]
+
+We can also fix \(t_0 \in I\) and measure the arclength along the path \(p\) from the point \(p(t_0)\) as a function of \(t\).
+\[
+s(t, t_0) = \int_{t_0}^t \left| p'(u) \right| \, du
+\]
+
+<br />
+
+<h3>Arclength does not depend on the parametrisation</h3>
+
+It is important to note that the arclength does not depend on the choice of parametrisation. To see this, let \(p : I \rightarrow \mathbb{R}^3\) and \(q : J \rightarrow \mathbb{R}^3\) be smooth paths, and let \(t : J \rightarrow I\) be an orientation-preserving reparametrisation. Let \(u_1, u_2 \in J\) and define \(t_1 = t(u_1)\) and \(t_2 = t(u_2)\). Then
+\[
+\begin{aligned}
+\int_{u_1}^{u_2} \left| q'(u) \right| \, du & = \int_{u_1}^{u_2} \left| \frac{d}{dt} p(t(u)) \right| \, du \\
+ & = \int_{u_1}^{u_2} \left| p'(t(u)) \frac{dt}{du} \right| \, du \quad \text{(by the Chain Rule)} \\
+ & = \int_{u_1}^{u_2} \left| p'(t(u)) \right| \frac{dt}{du} \, du \quad \text{(since the reparametrisation is orientation-preserving)} \\
+ & = \int_{t_1}^{t_2} \left| p'(t) \right| \, dt . \quad \text{(by the change of variables formula for integration)}
+\end{aligned}
+\]
+
+<h3>Arclength parametrisation</h3>
+
+<b>Definition. </b>A smooth path \(p : I \rightarrow \mathbb{R}^3\) is an <i>arclength parametrisation</i> if and only if \(|p'(t)| = 1\) for all \(t \in I\). <br />
+Equivalently, 
+\[
+t-t_0 = s(t, t_0) = \int_{t_0}^t \left| p'(u) \right| \, du .
+\]
+If this is true, then <i>the arclength from \(p(t_0)\) to \(p(t)\) is equal to \(t-t_0\)</i>.<br />
+
+<br />
+
+<b>Note. </b>Since \(|p'(t)| = 1\) for all \(t \in I\), then an arclength parametrisation is always regular.<br />
+
+<br \>
+
+<b>Example 1.</b> (The circle of radius r)<br />
+
+In contrast to the <a href="">earlier lecture</a> <font color="red">ADD IN LINK</font>, this time we will parametrise the circle by \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) such that
+\[
+\begin{aligned}
+p(t) & = \left( r \cos \left( \frac{t}{r} \right), r \sin \left( \frac{t}{r} \right), 0 \right) \\
+\Rightarrow \quad p'(t) & = \left( - \sin \left( \frac{t}{r} \right), \cos \left( \frac{t}{r} \right), 0 \right) \\
+\Rightarrow \quad \left| p'(t) \right| & = \sqrt{ \sin^2 \left( \frac{t}{r} \right) + \cos^2 \left( \frac{t}{r} \right)} = 1 .
+\end{aligned}
+\]
+Therefore \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) is an arclength parametrisation.<br />
+
+<b><font color="red">ADD PICTURE</font></b>
+
+<br />
+
+<b>Example 2.</b> (Helix)
+
+<h3>Reparametrising by arclength</h3>
+
+
+
+<b>Next time.</b><br />
+
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

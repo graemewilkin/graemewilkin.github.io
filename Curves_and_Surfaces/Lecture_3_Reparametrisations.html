@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>Reparametrising smooth paths</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Reparametrising smooth paths</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+Recall from the <a href="Lecture_2_Regular_and_Singular_Points.html">previous lecture</a> that we defined regular and singular points and studied some examples. Today we will discuss <i>reparametrising smooth paths</i>. <br />
+
+<br />
+
+Let \(I, J \subset \mathbb{R}\) be positive length intervals. If \(p : I \rightarrow \mathbb{R}^3\) and \(q : J \rightarrow \mathbb{R}^3\) are smooth paths, and suppose that there is a smooth function \(t : J \rightarrow I\) such that 
+<ol type="i">
+
+<li> \(q(u) = p(t(u))\) for all \(u \in J\),  
+
+<li> \(t'(u) \neq 0\) for all \(u \in J\), and
+
+<li> \(t\) is onto.
+
+</ol>
+
+Then we say that \(q\) is a <i>reparametrisation</i> of \(p\).<br /> 
+
+
+Note that since \(t\) is smooth and \(t'(u) \neq 0\) for all \(u \in J\), then we are in one of the two following cases:<br />
+<ul>
+<li> If \(t'(u) \gt 0\) for all \(u \in J\), then we say that the reparametrisation is <i>orientation-preserving</i>.<br />
+<li> If \(t'(u) \lt 0\) for all \(u \in J\), then we say that the reparametrisation is <i>orientation-reversing</i>.<br />
+</ul>
+
+Since \(t\) is smooth, onto and \(t'(u) \neq 0\) for all \(u \in J\), then the Inverse Function Theorem implies that \(t\) has a smooth inverse \(t^{-1} : I \rightarrow J\).<br />
+
+<br />
+
+<b>Remark.</b> Since \(t'(u) \neq 0\) for all \(u \in J\), then \(t : J \rightarrow I\) is or one-to-one. This condition means that the path cannot "double back" on itself.<br />
+<br />
+
+<b>Example 1.</b> (Reparametrisations of the helix)<br />
+
+Define \(p : [0,2\pi] \rightarrow \mathbb{R}^3\) by \(p(t) = (\cos t, \sin t, ct)\). This is the familiar example of the helix from Lecture 1. Now define \(q : [0,\pi] \rightarrow \mathbb{R}^3\) by \(q(u) = (\cos(2u), \sin(2u), 2cu)\). This is a smooth path with the same track as \(p\), and the two paths are related by \(q(u) = p(2u)\). The reparametrisation function is \(t(u) = 2u\). <br />
+
+Define the smooth path \(r : [-2\pi, 0] \rightarrow \mathbb{R}^3\) by \(r(v) = (\cos (-v), \sin(-v), -cv) = (\cos v, -\sin v, -cv)\). This is another smooth path with the same track as \(p\), and the two paths are related by the orientation-reversing reparametrisation \(r(v) = p(-v)\), where \(t(v) = -v\).<br />
+
+<br />
+
+<b>Example 2.</b> (Reparametrisations of the graph of \(y = e^x\))<br />
+Define \(p : [1,4] \rightarrow \mathbb{R}^3\) by \(p(t) = (t, e^t, 0)\). Now define \(q : [1,2] \rightarrow \mathbb{R}^3\) by \(q(u) = (u^2, e^{u^2}, 0)\). Then \(q\) is a reparametrisation of \(p\), since the two paths are related by \(q(u) = p(u^2)\), where the reparametrisation is \(t(u) = u^2\). <br />
+Note that it is tempting to extend this reparametrisation to the paths \(p : [0,4] \rightarrow \mathbb{R}^3\), \(p(t) = (t, e^t, 0)\) and \(q : [0,2] \rightarrow \mathbb{R}^3\), \(q(u) = (u^2, e^{u^2}, 0)\). In this case, the function \(t : [0,2] \rightarrow [0,4]\), \(t(u) = u^2\) satisfies \(t'(0) = 0\), and so it is not a reparametrisation by our above definition. It is worth noting that \(p\) is a regular path, while \(q\) has a singular point at \(u=0\). <br />
+
+<br />
+
+The chain rule shows that \[q'(u) = \frac{dq}{du} = \frac{d}{du} p(t(u)) = \frac{dp}{dt} \cdot \frac{dt}{du} = p'(t) t'(u).\]
+
+ Since \(t'(u) \neq 0\) (by our definition of a reparametrisation) then we see that \(p'(t) \neq 0\) if and only if \(q'(u) \neq 0\). In particular, if \(p\) is regular, then every reparametrisation of \(p\) is also regular, and so we see that regularity is preserved by reparametrisation.<br />
+
+<br />
+
+Using this result, one can show that reparametrisation defines an equivalence relation on the set of smooth paths. Therefore we can talk about equivalence classes of smooth paths, which leads into the following definition.<br /><br />
+
+<b>Definition.</b> (Smooth curves)<br />
+A <i>smooth curve</i> is an equivalence class of smooth paths, any two of which are equal after some reparametrisation.<br />
+A smooth curve is <i>regular</i> if all its parametrisations are regular.<br />
+An <i>oriented smooth curve</i> is an equivalence class of smooth paths up to orientation-preserving reparametrisation.<br />
+
+<br />
+
+
+<b>Next time.</b><br />
+We will discuss how to parametrise smooth regular curves by arclength. This arclength parametrisation is useful, as it gives us a canonical parametrisation of a smooth regular curve, which we can then use to define quantities such as the curvature, torsion and the Frenet frame.<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

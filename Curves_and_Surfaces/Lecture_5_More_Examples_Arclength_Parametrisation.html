@@ -1,0 +1,176 @@
+<HTML>
+<HEAD>
+<TITLE>More exapmles of reparametrising by arclength</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Parametrising smooth regular curves by arclength</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+Recall from the <a href="Lecture_4_Arclength_Parametrisation.html">previous lecture</a> that we defined the arclength and then proved that a smooth regular path always has a reparametrisation by arclength. Today we will see some more examples of reparametrising by arclength.<br />
+
+<br />
+
+First recall our procedure for reparametrising by arclength. Given a smooth regular parametrisation \(p(t)\), we solved for the arclength \(s = s(t)\) as a function of \(t\), then inverted the formula to find \(t = t(s)\) as a smooth function of \(s\) (recall that this step requires the path \(p(t)\) to be regular), and then reparametrised to get \(q(s) = p(t(s))\).<br />
+
+<br />
+
+<b>Example.</b> (Helix)<br />
+
+Consider the parametrisation \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) of the helix given by
+\[
+p(t) = \left( r \cos t, r \sin t, ct \right) \quad \text{for \(r, c > 0\)} .
+\]
+Then
+\[
+\begin{aligned}
+p'(t) & = (-r \sin t, r \cos t, c) \\
+\left| p'(t) \right| & = \sqrt{r^2 + c^2} .
+\end{aligned}
+\]
+The arclength is a function \(s : \mathbb{R} \rightarrow \mathbb{R}\) given by
+\[
+s(t) = \int_0^t \left| p'(u) \right| \, du = \int_0^t \sqrt{r^2 + c^2} \, du = t \sqrt{r^2 + c^2} .
+\]
+The inverse function \(t : \mathbb{R} \rightarrow \mathbb{R}\) is
+\[
+t(s) = \frac{s}{\sqrt{r^2 + c^2}} 
+\]
+and so the reparametrisation by arclength is given by 
+\[
+\begin{aligned}
+q : \mathbb{R} & \rightarrow \mathbb{R}^3 \\
+q(s) & = p(t(s)) \\
+ & = \left( r \cos \left( \frac{s}{\sqrt{r^2 + c^2}} \right), r \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{cs}{\sqrt{r^2+c^2}} \right) .
+\end{aligned}
+\]
+We can then check that \(|q'(s)| = 1\), and so we have reparametrised the helix by arclength.<br />
+
+<br />
+
+<b>Example.</b> (Cuspidal cubic)<br />
+
+In this example we will study a path that is not regular (the first example from the <a href="Lecture_2_Regular_and_Singular_Points.html">lecture on regular and singular points</a>). It turns out that we can still reparametrise this path by arclength, but this reparametrisation is not smooth.<br /><br />
+
+Define the parametrisation by
+\[
+\begin{aligned}
+p : \mathbb{R} & \rightarrow \mathbb{R}^3 \\
+p(t) & = \left( t^3, t^2, 0 \right)
+\end{aligned}
+\]
+Then the tangent vector is
+\[
+\begin{aligned}
+p'(t) & = \left( 3t^2, 2t, 0 \right) \\
+\left| p'(t) \right| & = \sqrt{9t^4 + 4t^2} = |t| \sqrt{9t^2 + 4} .
+\end{aligned}
+\]
+
+<center>
+<iframe scrolling="no" title="Curve with a cusp" src="https://www.geogebra.org/material/iframe/id/ykzu92nt/width/791/height/469/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="469px" style="border:0px;"> </iframe>
+</center>
+
+
+Therefore the arclength is given by
+\[
+\begin{aligned}
+s(t) = \int_0^t |u| \sqrt{9u^2 + 4} \, du .
+\end{aligned}
+\]
+There are two cases, when \(t \geq  0\), and so \(|u| = u\) on the interval \([0,t]\), and when \(t < 0\) in which case \(|u| = -u\) on the interval \([t, 0]\).<br />
+
+We can integrate this by substitution, using 
+\[
+v = 9u^2 + 4, \quad dv = 18u \, du \quad \Rightarrow \quad \frac{1}{18} dv = u du .
+\]
+Therefore, when \(t \geq 0\) we have 
+\[
+\begin{aligned}
+s(t) & = \int_0^t u \sqrt{9u^2 + 4} \, du \\
+ & = \int_4^{9t^2 + 4} \frac{1}{18} \sqrt{v} \, dv \\
+ & = \frac{1}{18} \left[ \frac{2}{3} v^{\frac{3}{2}} \right]_4^{9t^2+4} \\
+ & = \frac{1}{27} \left( (9t^2 + 4)^{\frac{3}{2}} - 8 \right) .
+\end{aligned}
+\]
+
+Note that the above formula shows that \(s \geq 0\) when \(t \geq 0\).<br />
+
+In the case \(t < 0\), the same idea shows that
+\[
+\begin{aligned}
+s(t) & = -\int_0^t u \sqrt{9u^2 + 4} \, du \\
+ & = \cdots \\
+ & = - \frac{1}{27} \left( (9t^2 + 4)^{\frac{3}{2}} - 8 \right) .
+\end{aligned}
+\]
+Again note that \(s < 0\) when \(t < 0\).<br />
+
+We can now solve for \(t\) as a function of \(s\). When \(t \geq 0\) then
+\[
+\begin{aligned}
+\left( 9t^2 + 4 \right)^{\frac{3}{2}} & = 27s + 8 \\
+\Rightarrow \quad 9t^2 + 4 & = \left( 27s + 8 \right)^{\frac{2}{3}} \\
+\Rightarrow \quad t^2 & = \frac{1}{9} \left( (27s + 8)^{\frac{2}{3}} - 4 \right) \\
+\Rightarrow \quad t & = \frac{1}{3} \sqrt{\left( 27s + 8 \right)^{\frac{2}{3}} - 4} . 
+\end{aligned}
+\]
+When \(t < 0\) the same idea shows that
+\[
+\begin{aligned}
+\left( 9t^2 + 4 \right)^{\frac{3}{2}} & = -27s + 8 \\
+\Rightarrow \quad 9t^2 + 4 & = \left( -27s + 8 \right)^{\frac{2}{3}} \\
+\Rightarrow \quad t^2 & = \frac{1}{9} \left( (-27s + 8)^{\frac{2}{3}} - 4 \right) \\
+\Rightarrow \quad t & = -\frac{1}{3} \sqrt{\left( -27s + 8 \right)^{\frac{2}{3}} - 4} .
+\end{aligned}
+\]
+Therefore the inverse function \(t : \mathbb{R} \rightarrow \mathbb{R}\) is
+\[
+t(s) = \begin{cases} \frac{1}{3} \sqrt{\left( 27s + 8 \right)^{\frac{2}{3}} - 4} & \text{if \(t \geq 0\)} \\ -\frac{1}{3} \sqrt{\left( -27s + 8 \right)^{\frac{2}{3}} - 4} & \text{if \(t < 0\)} \end{cases}
+\]
+
+Therefore we see that when \(s=0\), the function \(t(s)\) is not differentiable, and therefore the reparametrisation by arclength \(q : \mathbb{R} \rightarrow \mathbb{R}^3\) given by
+\[
+q(s) = p(t(s)) = \begin{cases} \left( \frac{1}{27} \left( (27s+8)^{2/3} - 4 \right)^{3/2}, \frac{1}{9} \left( (27s+8)^{2/3}-4 \right), 0 \right) & \text{if \(s \geq 0\)} \\ \left( -\frac{1}{27} \left( (-27s+8)^{2/3} - 4 \right)^{3/2}, \frac{1}{9} \left( (-27s+8)^{2/3}-4 \right), 0 \right) & \text{if \(s < 0\)} \end{cases}
+\]
+is not smooth.
+
+<br /><br />
+
+<b>Remarks.</b><br />
+
+<ol type="a">
+
+<li> The calculations in the above example turn out to be extremely complicated, however this shouldn't obscure the main idea: if the original curve is not regular, then we can't expect the reparametrisation by arclength to be smooth.
+
+<li> Even for a path such as \(p(t) = (t^3, t^2, 0)\) with a very simple formula, the reparametrisation by arclength can turn out to have an extremely complicated formula. Unfortunately this occurs a lot in practice. When we study the curvature and torsion next week, we will initially use an arclength parametrisation, which makes the definitions much cleaner, but has the unfortunate drawback that seemingly simple examples can turn out to be difficult to compute in practice. Later on we will derive a formula for the curvature and torsion that works in any parametrisation.<br />
+
+</ol>
+
+<h3>Next time</h3>
+We will use the arclength parametrisation to define the <i>curvature</i> of a smooth regular path.<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

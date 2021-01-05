@@ -45,7 +45,9 @@ It is important to note that the arclength does not depend on the choice of para
 \end{aligned}
 \]
 
-<h3>Arclength parametrisation</h3>
+<h3>Parametrising a path by its arclength</h3>
+
+Now we can define what it means to parametrise a path by its arclength. It turns out (see the note below) that an arclength parametrisation is always regular. <br />
 
 <b>Definition. </b>A smooth path \(p : I \rightarrow \mathbb{R}^3\) is an <i>arclength parametrisation</i> if and only if \(|p'(t)| = 1\) for all \(t \in I\). <br />
 Equivalently, 
@@ -56,13 +58,13 @@ If this is true, then <i>the arclength from \(p(t_0)\) to \(p(t)\) is equal to \
 
 <br />
 
-<b>Note. </b>Since \(|p'(t)| = 1\) for all \(t \in I\), then an arclength parametrisation is always regular.<br />
+<b>Note. </b>Since \(|p'(t)| = 1\) for all \(t \in I\), then <i>an arclength parametrisation is always regular</i>.<br />
 
 <br \>
 
 <b>Example 1.</b> (The circle of radius r)<br />
 
-In contrast to the <a href="">earlier lecture</a> <font color="red">ADD IN LINK</font>, this time we will parametrise the circle by \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) such that
+In contrast to the <a href="Lecture_1_Smooth_Paths.html#L1_Circle">earlier lecture</a>, this time we will parametrise the circle by \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) such that
 \[
 \begin{aligned}
 p(t) & = \left( r \cos \left( \frac{t}{r} \right), r \sin \left( \frac{t}{r} \right), 0 \right) \\
@@ -72,18 +74,107 @@ p(t) & = \left( r \cos \left( \frac{t}{r} \right), r \sin \left( \frac{t}{r} \ri
 \]
 Therefore \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) is an arclength parametrisation.<br />
 
-<b><font color="red">ADD PICTURE</font></b>
-
 <br />
 
-<b>Example 2.</b> (Helix)
+<b>Example 2.</b> (Helix)<br />
+
+Now we will parametrise the helix by \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) given by the following formula (again, you might like to compare this with our previous parametrisation from the <a href="Lecture_1_Smooth_Paths.html#L1_Helix">first lecture</a>.
+\[
+\begin{aligned}
+p(t) & = \left( r \cos \left( \frac{t}{\sqrt{r^2 + c^2}} \right), r \sin \left( \frac{t}{\sqrt{r^2+c^2}} \right), \frac{ct}{\sqrt{r^2+c^2}} \right) \\
+\Rightarrow \quad p'(t) & = \left( -\frac{r}{\sqrt{r^2+c^2}} \sin \left( \frac{t}{\sqrt{r^2+c^2}} \right), \frac{r}{\sqrt{r^2+c^2}} \cos \left( \frac{t}{\sqrt{r^2+c^2}} \right), \frac{c}{\sqrt{r^2+c^2}} \right) \\
+\Rightarrow \left| p'(t) \right| & = \frac{1}{\sqrt{r^2+c^2}} \sqrt{r^2 + c^2} \\
+ & = 1
+\end{aligned}
+\]
+Therefore \(p\) is an arclength parametrisation of the helix.<br />
+
+<center>
+<iframe scrolling="no" title="Helix in R^3" src="https://www.geogebra.org/material/iframe/id/bfua3ffe/width/791/height/602/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="602px" style="border:0px;"> </iframe>
+</center>
+<br />
+
 
 <h3>Reparametrising by arclength</h3>
 
+Given that the above parametrisations of the circle and the helix look different to those from our <a href="Lecture_1_Smooth_Paths.html">first lecture</a>, it is natural to ask whether there is a systematic way to take a given parametrisation and reparametrise it so that the new parametrisation is by arclength. <br />
+It turns out that this is always possible if the original parametrisation is regular. We will prove this below, but first we will study the following motivating example.<br /><br />
+
+<b>Example. </b>(Reparametrising the circle)<br />
+Consider the circle again, but this time with our original parametrisation \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) given by
+\[
+p(t) = (r \cos t, r \sin t, 0) .
+\]
+Then the tangent vector is
+\[
+\begin{aligned}
+p'(t) & = (-r \sin t, r \cos t, 0) \\
+\Rightarrow \quad \left| p'(t) \right| & = r .
+\end{aligned}
+\]
+The arclength from \(p(0)\) to \(p(t)\) is then
+\[
+s(t, 0) = \int_0^t \left| p'(u) \right| \, du = \int_0^t r \, du = rt .
+\]
+This determines \(s = s(t, 0)\) as a function of \(t\). We can rearrange this formula to solve for \(t\) as a function of \(s\)
+\[
+t(s) = \frac{s}{r} .
+\]
+Now define a new parametrisation of the circle \(q : \mathbb{R} \rightarrow \mathbb{R}^3\) by
+\[
+q(s) = \left( r \cos \left( \frac{s}{r} \right), r \sin \left( \frac{s}{r} \right) , 0 \right) .
+\]
+Then \(q(s) = p\left( \frac{s}{r} \right) = p(t(s))\) and so \(q\) is a reparametrisation of \(p\) (see <a href="Lecture_3_Reparametrisations.html">the lecture on reparametrisations</a> if you need to remind yourself of the definition). Moreover, we also have \(\left| q'(s) \right| = q\), and so \(q\) is an arclength parametrisation of the circle.<br />
+
+<br />
+
+In summary, we started with a parametrisation \(p(t)\), we solved for the arclength \(s = s(t)\) as a function of \(t\), then inverted the formula to find \(t = t(s)\) as a function of \(s\), and then reparametrised to get \(q(s) = p(t(s))\). We will now show that if the original parametrisation \(p(t)\) is regular, then this process always gives us an arclength parametrisation.<br />
+
+<br />
+
+<b>Lemma. </b>(Reparametrising by arclength)<br />
+
+Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth regular path. Then there exists an interval \(J\) and a reparametrisation \(t : J \rightarrow I\) such that \(q : J \rightarrow \mathbb{R}^3\) given by
+\[
+q(s) = p(t(s))
+\]
+is a parametrisation by arclength.<br /> 
+
+<br />
+
+<b>Proof. </b><br />
+Choose a point \(t_0 \in I\). Then the arclength from \(p(t_0)\) to \(p(t)\) is given by
+\[
+s(t) = \int_{t_0}^t \left| p'(u) \right| \, du .
+\]
+Since \(p\) is regular, then \(|p'(t)| > 0\) for all \(t \in I\), therefore 
+\[
+s'(t) = \frac{d}{dt} \int_{t_0}^t \left| p'(u) \right| \, du = \left| p'(t) \right| > 0
+\]
+by the Fundamental Theorem of Calculus. Therefore the image of \(s\) is an interval \(J \subset \mathbb{R}\) and so the arclength defines an increasing function \(s : I \rightarrow J\). <br />
+
+The Inverse Function Theorem then guarantees the existence of a smooth inverse \(t : J \rightarrow I\) with 
+\[
+\frac{dt}{ds} = \frac{1}{\frac{ds}{dt}} = \frac{1}{|p'(t)|} > 0 .
+\]
+Now define \(q : J \rightarrow I\) by
+\[
+q(s) = p(t(s)) .
+\]
+Therefore \(q : J \rightarrow \mathbb{R}^3\) is an orientation-preserving reparametrisation of \(p : I \rightarrow \mathbb{R}^3\). Moreover, we have
+\[
+q'(s)= \frac{d}{ds} p(t(s)) = \frac{dp}{dt} \frac{dt}{ds} = \frac{p'(t)}{|p'(t)|} 
+\] 
+therefore \(|q'(s)| = 1\), and so \(q\) is parametrised by arclength. &nbsp; &nbsp; &nbsp; &nbsp; <code>q.e.d.</code> 
+
+<br />
 
 
-<b>Next time.</b><br />
+<br />
 
+
+<h3>Next time</h3>
+We will do some more examples of reparametrising by arclength.<br />
 
 <p>
 <a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>

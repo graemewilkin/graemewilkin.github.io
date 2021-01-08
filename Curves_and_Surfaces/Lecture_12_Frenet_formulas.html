@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>The Frenet formulas</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">The Frenet formulas</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+Recall from the lecture on the <a href="">Frenet frame</a> that if \(p : I \rightarrow \mathbb{R}^3\) is parametrised by arclength and \(p(s)\) is not a point of inflection (equivalently, \(p''(s) \neq 0 \quad \Leftrightarrow \quad \kappa(s) \neq 0\)) then we can define the <i>Frenet frame</i> at \(p(s)\) as the orthonormal triple of vectors \(T(s), N(s), B(s)\) given by the formulas
+\[
+\begin{aligned}
+T(s) & = p'(s) \quad \text{(Unit tangent vector)} \\
+N(s) & = \frac{T'(s)}{|T'(s)|} \quad \text{(Principal normal vector)} \\
+B(s) & = T(s) \times N(s) \quad \text{(Binormal vector)} 
+\end{aligned}
+\]
+
+The following picture shows the Frenet frame for the helix.
+
+<center>
+<iframe scrolling="no" title="The Frenet frame for the helix" src="https://www.geogebra.org/material/iframe/id/e3bzqpn3/width/791/height/602/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="602px" style="border:0px;"> </iframe>
+</center>
+
+In this lecture we will prove the <i>Frenet formulas</i> which relate the derivatives \(T'(s), N'(s), B'(s)\) to the Frenet frame \(T(s), N(s), B(s)\). This relationship can be written entirely in terms of the curvature and torsion, which will allow us to prove in the <a href="Lecture_13_Fundamental_Theorem.html">next lecture</a> that the curvature and torsion completely determine the curve up to Euclidean motions.<br />
+
+<br />
+
+First recall that the definition of the curvature implies that
+\[
+\begin{aligned}
+N(s) & = \frac{T'(s)}{|T'(s)|} \\
+\Rightarrow \quad T'(s) & = \kappa(s) N(s) .
+\end{aligned}
+\]
+The definition of the torsion implies that
+\[
+B'(s) = \tau(s) N(s) .
+\]
+
+Therefore we have easily computed \(T'(s)\) and \(B'(s)\) in terms of the curvature, the torsion and the vectors in the original Frenet Frame. The final derivative we need to compute is \(N'(s)\), which we can do by noting that since \((T(s), N(s), B(s))\) form an orthonormal frame, then 
+\[
+\begin{aligned}
+\left| N(s) \right| = 1 \quad \Rightarrow \quad & N'(s) \cdot N(s) = 0 \\
+ & N'(s) = \alpha T(s) + \beta B(s)
+\end{aligned}
+\]
+for some real numbers \(\alpha\) and \(\beta\) which we can compute by
+\[
+\alpha = N'(s) \cdot T(s), \quad \beta = N'(s) \cdot B(s) .
+\]
+Now we also know that
+\[
+\begin{aligned}
+N(s) \cdot T(s) &  = 0 \\
+\Rightarrow \quad \frac{d}{ds} \left( N(s) \cdot T(s) \right) & = 0 \\
+\Leftrightarrow \quad N'(s) \cdot T(s) + N(s) \cdot T'(s) & = 0 \\
+\Rightarrow \quad \alpha = N'(s) \cdot T(s) = -N(s) \cdot T'(s) . & 
+\end{aligned}
+\]
+The definition of curvature tells us that \(T'(s) = \kappa(s) N(s)\), and therefore
+\[
+\alpha = -N(s) \cdot T'(s) = - \kappa(s) .
+\]
+Now we can use the same idea to compute \(\beta = N'(s) \cdot B(s)\). By differentiating the equation \(N(s) \cdot B(s) = 0\), we see that
+\[
+\begin{aligned}
+N'(s) \cdot B(s) + N(s) \cdot B'(s) & = 0 \\
+\Leftrightarrow \quad \beta = N'(s) \cdot B(s) = - N(s) \cdot B'(s) . & 
+\end{aligned}
+\]
+The definition of torsion tells us that \(B'(s) = \tau(s) N(s)\), therefore
+\[
+\beta = -N(s) \cdot B'(s) = -\tau(s) .
+\]
+Therefore we have computed the derivative of the normal vector
+\[
+N'(s) = -\kappa(s) T(s) - \tau(s) B(s) .
+\] 
+
+<h3>The Frenet formulas</h3>
+
+These three formulas are together called the <i>Frenet formulas</i> and can be written in matrix form as follows.
+\[
+\left( \begin{matrix} T'(s) \\ N'(s) \\ B'(s) \end{matrix} \right) = \left( \begin{matrix} 0 & \kappa(s) & 0 \\ -\kappa(s) & 0 & -\tau(s) \\ 0 & \tau(s) & 0 \end{matrix} \right) \left( \begin{matrix} T(s) \\ N(s) \\ B(s) \end{matrix} \right)
+\]
+
+
+
+<h3>Next time</h3>
+
+We will use these formulas to prove the <i>Fundamental Theorem of Space Curves</i>, which says that if there are no inflection points, then the curvature and torsion determine the curve up to a rigid motion (e.g. rotation, translation, reflection).<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

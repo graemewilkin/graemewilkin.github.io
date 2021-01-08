@@ -1,0 +1,284 @@
+<HTML>
+<HEAD>
+<TITLE>Torsion and the osculating plane</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Torsion and the osculating plane</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+Recall from the <a href="Lecture_7_Frenet_Frame.html">previous lecture</a> that the <i>Frenet frame</i> of a smooth regular curve \(p : I \rightarrow \mathbb{R}^3\) parametrised by arclength at a point \(p(s)\) which is not a point of inflection is an orthonormal frame \((T(s), N(s), B(s))\) given by
+\[
+\begin{aligned}
+T(s) & = p'(s) \\
+N(s) & = \frac{T'(s)}{|T'(s)|} \\
+B(s) & = T(s) \times N(s) .
+\end{aligned}
+\]
+In the <a href="Lecture_6_Curvature.html">lecture before that</a> we defined the curvature as the change in the tangent vector
+\[
+\begin{aligned}
+k(s) & = T'(s) \in \mathbb{R}^3 \\
+\kappa(s) & = \left| k(s) \right| = \left| T'(s) \right| \in \mathbb{R}_{\geq 0} .
+\end{aligned}
+\] 
+
+<b>Today.</b> We will define the <i>osculating plane</i>, the <i>osculating circle</i> and the <i>torsion</i> in terms of the Frenet frame. <br />
+
+We will see later that, along with the curvature, the torsion is another intrinsic invariant of the curve. <br />
+
+<br />
+
+<h3>The osculating plane and osculating circle</h3>
+
+<b>Definition.</b> (Osculating plane)<br />
+Let \(p : I \rightarrow \mathbb{R}^3\) be an arclength parametrisation of a smooth regular curve, and suppose that \(p(s)\) is not a point of inflection. The <i>osculating plane at \(p(s)\)</i> is the unique plane through \(p(s)\) which is perpendicular to the binormal vector \(B(s)\).<br />
+
+Equivalently, the osculating plane is the unique plane through \(p(s)\) which is parallel to both \(T(s)\) and \(N(s)\).<br />
+
+<br />
+
+The following picture shows the osculating plane for the helix. We will come back to this picture when we define the torsion, but for now it is useful for our intuition to note that the osculating plane is moving due to the "twisting" nature of the curve.<br />
+
+<br />
+
+<center>
+<iframe scrolling="no" title="The osculating plane for the helix" src="https://www.geogebra.org/material/iframe/id/ktfgmdbw/width/791/height/602/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="602px" style="border:0px;"> </iframe>
+</center>
+
+<br />
+
+<b>Definition.</b> (Osculating circle)<br />
+
+Let \(p : I \rightarrow \mathbb{R}^3\) be an arclength parametrisation of a smooth regular curve, and suppose that \(p(s)\) is not a point of inflection. The <i>osculating circle</i> at \(p(s)\) is the unique circle in the osculating plane which has centre \(O(s) = p(s) + \frac{1}{\kappa(s)} N(s)\) and radius \(\frac{1}{\kappa(s)}\). Note that the osculating circle is then tangent to the curve at \(p(s)\). <br />
+
+<br />
+
+The following examples will help build intuition about the osculating circle.<br />
+
+<br />
+
+<a name="ex_parabola"><b>Example 1.</b> (Parabola)<br />
+
+Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (t, t^2, 0)\). Then the unit tangent vector is
+\[
+T(t) = \frac{p'(t)}{|p'(t)|} = \frac{(1, 2t, 0)}{\sqrt{1 + 4t^2}}.
+\]
+We will see later (once we have derived a formula for the curvature with respect to any parametrisation) that 
+\[
+\begin{aligned}
+\kappa(t) & = \frac{|p'(t) \times p''(t)|}{|p'(t)|^3} = \frac{2}{\left( 1 + 4t^2 \right)^{3/2}} \\
+N(t) & = \frac{(-2t, 1, 0)}{\sqrt{1+4t^2}} . 
+\end{aligned}
+\]
+Therefore the osculating circle has radius \(r(t)\) and centre \(O(t)\) given by
+\[
+\begin{aligned}
+r(t) & = \frac{1}{\kappa(t)} = \frac{\left( 1 + 4t^2 \right)^{3/2}}{2} \\
+O(t) & = p(t) + \frac{1}{\kappa(t)} N(t).
+\end{aligned}
+\]
+
+This is illustrated in the following picture. You can click and drag the point \(P\) to move it along the curve, and the osculating circle will move accordingly.<br />
+
+<br />
+
+<center>
+<iframe scrolling="no" title="Parabola with osculating circle" src="https://www.geogebra.org/material/iframe/id/vczzafzs/width/791/height/469/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="469px" style="border:0px;"> </iframe>
+</center>
+
+<br />
+
+<a name="ex_cubic"><b>Example 2.</b> (Cubic curve)<br />
+
+Consider the cubic curve \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) defined by \(p(t) = (t, t^3, 0)\). Then the unit tangent vector is
+\[
+T(t) = \frac{p'(t)}{|p'(t)|} = \frac{(1, 3t^2, 0)}{\sqrt{1 + 9t^4}} .
+\]
+Just as for the parabola, reparametrising by arclength turns out to be a long calculation, and so we will use the formula for the curvature in any parametrisation now and prove it in a later lecture.
+\[
+\begin{aligned}
+\kappa(t) & = \frac{|p'(t) \times p''(t)|}{|p'(t)|^3}{|p'(t)|^3} = \frac{6|t|}{\left( 1 + 9t^4 \right)^{3/2}} \\
+N(t) & = \frac{t (-3t^2, 1, 0)}{|t| \sqrt{1 + 9t^4}}
+\end{aligned}
+\]
+Therefore the osculating circle has radius \(r(t)\) and centre \(O(t)\) given by
+\[
+\begin{aligned}
+r(t) & = \frac{1}{\kappa(t)} = \frac{\left( 1 + 9t^4 \right)^{3/2}}{6|t|} \\
+O(t) & = p(t) + r(t) N(t) .
+\end{aligned}
+\]
+
+<br />
+
+The following picture illustrates the cubic curve and the osculating circle. Once again, you can click and drag to move the point \(P\) along the curve, and the osculating circle will move accordingly. Notice how the radius of the circle approaches infinity at the point of inflection \(t=0\).<br />
+
+<br />
+
+<center>
+<iframe scrolling="no" title="Cubic with osculating circle" src="https://www.geogebra.org/material/iframe/id/aptdfcyd/width/682/height/469/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="682px" height="469px" style="border:0px;"> </iframe>
+</center>
+
+<br />
+
+<h3>Torsion</h3>
+
+In addition to the curvature, another intrinsic quantity associated to a curve is the <i>torsion</i>, which measure the change in the osculating plane, or the "twisting" in the curve.<br />
+
+<br />
+
+Before defining the torsion, first note that since the binormal vector \(B(s)\) is a unit vector, then
+\[
+\begin{aligned}
+B(s) \cdot B(s) & = 1 \\
+\Rightarrow \quad \frac{d}{ds} \left( B(s) \cdot B(s) \right) & = 0 \\
+\Leftrightarrow \quad 2 B'(s) \cdot B(s) & = 0 .
+\end{aligned}
+\]
+Therefore \(B'(s)\) is perpendicular to \(B(s)\). We also know that
+\[
+\begin{aligned}
+B(s) & = T(s) \times N(s) \\
+\Rightarrow \quad B'(s) & = T'(s) \times N(s) + T(s) \times N'(s) \\
+ & = \kappa(s) N(s) \times N(s) + T(s) \times N'(s) \\
+ & = T(s) \times N'(s) .
+\end{aligned}
+\]
+Therefore \(B'(s)\) is also perpendicular to \(T(s)\). Since the Frenet frame \(T(s), N(s), B(s)\) is an orthonormal frame, then we see that \(B'(s)\) must be parallel to \(N(s)\). <br />
+
+<br />
+
+<b>Definition.</b> (Torsion)<br />
+Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth regular path parametrised by arclength, and suppose that \(p(s)\) is not a point of inflection. The <i>torsion</i> is the function \(\tau(s)\) such that
+\[
+B'(s) = \tau(s) N(s) .
+\]
+Equivalently, since \(N(s)\) is a unit vector, we have
+\[
+\tau(s) = B'(s) \cdot N(s) .
+\]
+
+<br />
+
+The binormal vector is the vector perpendicular to the osculating plane. Therefore \(B'(s)\) measures the change in the osculating plane, or how much the osculating plane is moving off its axis as the point \(p(s)\) moves along the path. Returning to our animation of the helix, this time we will look at it from side-on, so we can how the osculating plane is moving, therefore the torsion is non-zero.
+
+<br />
+
+<center>
+<iframe scrolling="no" title="The osculating plane for the helix (side on view)" src="https://www.geogebra.org/material/iframe/id/byrtgz4u/width/791/height/602/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="602px" style="border:0px;"> </iframe>
+</center>
+
+<br />
+
+Now that we have an intuitive grasp of the torsion, we can compute it precisely using the formula from the definition above.<br />
+
+<br />
+
+<b>Example.</b> (The torsion of the helix)<br />
+
+Using our familiar arclength parametrisation of the helix
+\[
+p(s) = \left( r \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), r \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{cs}{\sqrt{r^2+c^2}} \right),
+\]
+recall that we have previously computed the unit tangent vector and principal normal vector
+\[ T(s) = \left( - \frac{r}{\sqrt{r^2+c^2}} \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{r}{\sqrt{r^2+c^2}} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{c}{\sqrt{r^2+c^2}} \right), \quad N(s) = \left( -\cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), -\sin \left( \frac{s}{\sqrt{r^2+c^2}} \right) , 0 \right) \]
+Taking the cross product gives us the binormal vector
+\[ B(s) = T(s) \times N(s) = \left( \frac{c}{\sqrt{r^2 + c^2}} \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), -\frac{c}{\sqrt{r^2 + c^2}} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{r}{\sqrt{r^2+c^2}} \right) \]
+
+Now we can differentiate this to compute the torsion
+\[ B'(s) = \left( \frac{c}{r^2+c^2} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{c}{r^2+c^2} \sin \left( \frac{s}{r^2+c^2} \right) , 0   \right) = -\frac{c}{r^2+c^2} N(s) . \]
+Therefore \[\tau(s) = -\frac{c}{r^2 + c^2} .\]<br /><br />
+
+<br />
+
+<h3>Scalar triple product representation of the torsion</h3>
+
+We just showed that \(\tau(s) = B'(s) \cdot N(s)\) and that \(B'(s) = T(s) \times N'(s)\). Therefore, we can rewrite the formula for the torsion as
+\[
+\tau(s) = \left( T(s) \times N'(s) \right) \cdot N(s) .
+\]
+
+This turns out to be a special case of the <i>scalar triple product</i> of three vectors, which we now define.<br />
+
+<br />
+
+<b>Definition.</b> (Scalar triple product)<br /><a name="scalar_triple_def">
+Given any three vectors \(a, b, c \in \mathbb{R}^3\), the <i>scalar triple product</i> is defined to be
+\[
+[a, b, c] = \left( a \times b \right) \cdot c .
+\]
+
+Using the fact that the dot product is commutative, and the cross product is anti-commutative \(a \times b = -b \times a\), we immediately have the identities
+\[
+[a, b, c] = [b, c, a]  = [c, a, b] = - [b, a, c] = - [a, c, b]  = -[c, b, a] .
+\]
+
+The scalar triple product has two important properties that we will use frequently.<br />
+
+<ol type="i">
+
+<li> (Linearity) \([a_1 + a_2, b, c] = [a_1, b, c] + [a_2, b, c]\) 
+
+<li> Since \(a \times a = 0\), then \([a, a, c] = 0\), and so we see that <i>if two of the three vectors are parallel, then the scalar triple product is zero</i>.
+
+</ol>
+
+Therefore we can rewrite the above formula for the torsion as
+\[
+\begin{aligned}
+\tau(s) & = [T(s), N'(s), N(s)] \\
+\Leftrightarrow \quad \tau(s) & = - [T(s), N(s), N'(s)] .
+\end{aligned}
+\]
+Now we also know that in an arclength parametrisation
+\[
+\begin{aligned}
+T(s) & = p'(s) \\
+N(s) & = \frac{T'(s)}{\kappa(s)} = \frac{p''(s)}{\kappa(s)} \\
+N'(s) & = -\frac{1}{\kappa(s)^2} \left( p'''(s) \kappa(s) - p''(s) \kappa'(s) \right) \quad \text{(by the quotient rule applied to \(N(s)\))}
+\end{aligned}
+\]
+Therefore
+\[
+\begin{aligned}
+\tau(s) & = \left[ p'(s), \frac{p''(s)}{\kappa(s)}, - \frac{1}{\kappa(s)^2} \left( p'''(s) \kappa(s) - p''(s) \kappa'(s) \right) \right] \\
+ & = \left[ p'(s), \frac{p''(s)}{\kappa(s)}, - \frac{1}{\kappa(s)^2} p'''(s) \kappa(s) \right] + \left[ p'(s), \frac{p''(s)}{\kappa(s)}, p''(s) \kappa'(s) \right]
+\end{aligned}
+\]
+and since \(p''(s) \kappa'(s)\) is parallel to \(p''(s)\), then by the two important properties of the scalar triple product above, we see that
+\[
+\tau(s) = - \frac{1}{\kappa(s)^3} \left[ p'(s), p''(s), p'''(s) \right]
+\]
+
+This is an important formula that we will use in future lectures.<br />
+
+
+<h3>Next time</h3>
+We will show that the torsion is zero if and only if the curve is contained in a plane.
+<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

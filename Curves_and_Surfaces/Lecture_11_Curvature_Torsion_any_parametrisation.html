@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>Computing the curvature and torsion in any parametrisation</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Computing the curvature and torsion in any parametrisation</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+In the lectures on <a href="Lecture_6_Curvature.html">curvature</a> and <a href="Lecture_8_Torsion.html">torsion</a>, we defined the curvature and torsion using an arclength parametrisation. We do this because the arclength parametrisation is a canonical parametrisation for the curve, and the curvature and torsion are intrinsic quantities associated to the curve.<br />
+
+Unfortunately, we have seen that reparametrising by arclength is often complicated. First we have to find the inverse of
+\[
+s(t) = \int_{t_0}^t \left| p'(u) \right|\, du .
+\]
+The resulting formula is often quite complicated, and we then have to take derivatives to compute the components of the Frenet frame, and then the curvature and torsion. These issues make it difficult to compute the curvature and torsion in practice. Today we will prove some formulas for curvature and torsion in <i>any</i> parametrisation, which will then make it easier to compute these quantities directly, instead of having to reparametrise by arclength.<br />
+
+<br />
+
+The following result is proved in Theorem 1.13 in the <a href="Differential_Geometry_Lecture_Notes.pdf">Lecture Notes</a>.<br />
+
+<br />
+
+<b>Theorem. </b>(Curvature and torsion in any regular parametrisation)<br />
+
+Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth regular curve. Then
+\[ 
+\begin{aligned}  
+k(t) & = \frac{1}{|p'|^2} \left( p'' - \frac{p' \cdot p''}{|p'|^2} p' \right) \\
+\kappa(t) & = \frac{|p' \times p''|}{|p'|^3}.
+\end{aligned}
+\]
+If the point \(p(s)\) is not an inflection point, then
+\[ 
+\tau(t) = -\frac{1}{\kappa(t)^2} \frac{[p',p'',p''']}{|p'|^6} = - \frac{[p',p'',p''']}{|p' \times p''|^2} .
+\]
+
+
+<b>Exercise.</b><br />
+Now that we have these formulas in hand, you can revisit the examples of the <a href="Lecture_8_Torsion.html#ex_parabola">parabola</a> and the <a href="Lecture_8_Torsion.html#ex_cubic">cubic</a> curves and compute the curvature in both cases to see that it agrees with the formulas stated in these examples.<br />
+
+<br />
+
+
+<h3>Next time</h3>
+We will prove the <i>Frenet formulas</i> which show that the curvature and torsion determine a differential equation for the Frenet frame.<br />
+
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

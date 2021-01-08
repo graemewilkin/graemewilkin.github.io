@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<TITLE>Curves with zero torsion are planar</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Curves with zero torsion are planar</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+Recall from the <a href="Lecture_8_Torsion.html">previous lecture</a> that we defined the <i>torsion</i> of a curve in terms of the <a href="Lecture_7_Frenet_Frame.html">Frenet frame</a> as follows.<br />
+
+<br />
+
+<b>Definition.</b> (Torsion)<br />
+Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth regular path parametrised by arclength, and suppose that \(p(s)\) is not a point of inflection. The <i>torsion</i> is the function \(\tau(s)\) such that
+\[
+B'(s) = \tau(s) N(s) .
+\]
+Equivalently, since \(N(s)\) is a unit vector, we have
+\[
+\tau(s) = B'(s) \cdot N(s) .
+\]
+
+<br />
+
+We then described the intuition behind the torsion: that it measures the change in the osculating plane of the curve. If the osculating plane is moving off its axis (more precisely: the binormal vector \(B(s)\) is moving) then we expect the torsion to be non-zero.<br />
+
+<br />
+
+In this lecture we will make this idea precise by proving that the torsion is zero if and only if the curve remains in a fixed plane.<br />
+
+<br />
+
+Recall that a plane is determine by a point \(p_0 \in \mathbb{R}^3\) and a unit normal vector \(\hat{n}\). The equation of the plane is then
+\[
+(p - p_0) \cdot \hat{n} = 0 .
+\]
+Equivalently, the vector \(p\) is on the plane if and only if \(p-p_0\) is parallel to the plane, and hence perpendicular to the normal vector.<br />
+
+<br />
+
+<b>Definition.</b> (Planar curve)<br />
+A curve \(p : I \rightarrow \mathbb{R}^3\) is <i>planar</i> if and only if it is contained in a fixed plane. Equivalently, if \(\hat{n}\) is a unit normal vector to the plane, then \(p : I \rightarrow \mathbb{R^3}\) is contained in this plane if and only if for any \(s_0 \in I\) we have
+\[
+\left( p(s) - p(s_0) \right) \cdot \hat{n} = 0 
+\] 
+for all \(s \in I\). <br />
+
+<br />
+
+<b>Theorem.</b><br />
+
+If \(p : I \rightarrow \mathbb{R}^3\) has no inflection points, then \(p\) is planar if and only if \(\tau(s) = 0\). <br />
+
+<br />
+
+<b>Proof.</b> First we show that \(p\) is planar implies that the torsion is zero.<br />
+
+<br />
+
+If \(p : I \rightarrow \mathbb{R}^3\) is planar for a plane with normal vector \(\hat{n}\), then \(p'(s) \cdot \hat{n} = 0\) and \(p''(s) \cdot \hat{n} = 0\). Therefore, since \(p(s)\) has no inflection points, then
+\[
+T(s) \cdot \hat{n} = 0 \quad \text{and} \quad N(s) \cdot \hat{n} = 0 .
+\]
+Therefore the osculating plane spanned by \(T(s)\) and \(N(s)\) is the plane orthogonal to \(\hat{n}\), and so
+\[
+\begin{aligned}
+B(s) & = T(s) \times N(s) = \pm \hat{n} = constant \\
+\Rightarrow \quad B'(s) & = 0 \\
+\Leftrightarrow \quad \tau(s) & = 0 .
+\end{aligned}
+\]
+Therefore we have shown that \(p\) is planar implies that the torsion is zero. Conversely, now suppose that the torsion is zero. Then
+\[
+B'(s) = \tau(s) N(s) = 0 \quad \Leftrightarrow \quad B(s) = B(s_0) = constant.
+\]
+Since the Frenet frame is orthonormal, then \(0 = T(s) \cdot B(s) = T(s) \cdot B(s_0)\). Define \(\hat{n} = B(s_0) = B(s)\) for all \(s \in I\) (this makes sense since \(B(s)\) is constant), and note that
+\[
+\frac{d}{ds} \left( p(s) \cdot \hat{n} \right) = p'(s) \cdot B(s) = T(s) \cdot B(s) = 0
+\]
+Therefore \(p(s) \cdot \hat{n}\) is constant. If we fix some \(s_0 \in I\), then this implies that
+\[
+\begin{aligned}
+p(s) \cdot \hat{n} & = p(s_0) \cdot \hat{n} \quad \text{for all \(s \in I\)} \\
+\Leftrightarrow \quad \left( p(s) - p(s_0) \right) \cdot \hat{n} & = 0 \quad \text{for all \(s \in I\)} ,
+\end{aligned}
+\]
+and so \(p : I \rightarrow \mathbb{R}^3\) is planar.<br />
+
+<br />
+
+Therefore we have shown that the torsion is zero implies that the curve is planar, which completes the proof. &nbsp; &nbsp; &nbsp; <code>q.e.d.</code><br />  
+
+
+
+
+
+<h3>Next time</h3>
+We will define the notions of orientation and signed curvature.<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

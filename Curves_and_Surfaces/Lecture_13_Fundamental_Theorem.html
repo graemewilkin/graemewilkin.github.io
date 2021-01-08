@@ -1,0 +1,178 @@
+<HTML>
+<HEAD>
+<TITLE>The Fundamental Theorem of Space Curves</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">The Fundamental Theorem of Space Curves</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+In the previous lectures, we showed that given a smooth regular curve \(p : I \rightarrow \mathbb{R}^3\) with no inflection points, at each point \(p(t)\) we can define the <a href="Lecture_6_Curvature.html">curvature</a> \(\kappa(s)\) and <a href="Lecture_8_Torsion.html">torsion</a> \(\tau(s)\).<br />
+These real-valued functions \(\kappa(t)\) and \(\tau(t)\) are <i>intrinsic</i> to the curve, in the sense that they are independent of the parametrisation.<br />
+
+<br />
+
+Today we will prove the <i>Fundamental Theorem of Space Curves</i>, which shows that the curvature and torsion determine the curve up to Euclidean motions.<br />
+
+<br />
+
+<h3>Euclidean motions</h3>
+
+<b>Definition.</b> (Euclidean motion)<br />
+
+A transformation \(E : \mathbb{R}^3 \rightarrow \mathbb{R}^3\) is called a <i>Euclidean motion</i> or <i>isometry</i> if it preserves distances and angles.<br />
+Equivalently, for all vectors \(p_1, p_2, q_1, q_2 \in \mathbb{R}^3\), we have
+\[
+\left( E(p_1) - E(p_2) \right) \cdot \left( E(q_1) - E(q_2) \right) = \left( p_1 - p_2 \right) \cdot \left( q_1 - q_2 \right) .
+\]
+We can show that any Euclidean motion has the form
+\[
+E(v) = Lv + c \quad \text{for all \(v \in \mathbb{R}^3\)}
+\]
+where \(L : \mathbb{R}^3 \rightarrow \mathbb{R}^3\) is a linear map and \(c \in \mathbb{R}^3\) is a constant vector.<br />
+
+<br />
+
+The condition that \(E\) is a Euclidean motion means that \(L\) must satisfy
+\[
+\begin{aligned}
+\left( E(p_1) - E(p_2) \right) \cdot \left( E(q_1) - E(q_2) \right) & = \left( Lp_1 + c - (Lp_2 + c) \right) \cdot \left( Lq_1 + c - (Lq_2 + c) \right) \\
+ & = \left( L(p_1 - p_2) \right) \cdot \left( L(q_1 - q_2) \right) \\
+\Leftrightarrow \quad \left( L(p_1 - p_2) \right) \cdot \left( L(q_1 - q_2) \right)  & = (p_1 - p_2) \cdot (q_1 - q_2) .
+\end{aligned}
+\]
+Equivalently, for all vectors \(v, w \in \mathbb{R}^3\), we have
+\[
+(Lv) \cdot (Lw) = v \cdot w .
+\]
+This condition implies that \(L\) is represented by an orthogonal matrix
+\[
+L L^T = \left( \begin{matrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{matrix} \right)
+\]
+The formula for the determinant of a product then implies that
+\[
+\begin{aligned}
+1 & = \det(LL^T) = \det(L) \det(L^T) = (\det L)^2 \\
+\Rightarrow \quad \pm 1 & = \det L .
+\end{aligned}
+\]
+If \(\det L = 1\) then \(L\) corresponds to a rotation about the origin. If \(\det L = -1\) then \(L\) is the composition of a reflection across a plane through the origin with a roation around an axis orthogonal to that plane.<br />
+
+<br />
+
+Therefore, we see that a Euclidean motion \(E(v) = Lv + c\) satisfies <i>every Eclidean motion is the composition of a rotation with a reflection and/or a translation</i>.<br />
+
+<br />
+
+<b>Definition.</b> (Orientation-preserving Euclidean motions)<br />
+
+The Euclidean motion \(E(v) = Lv + c\) is <i>orientation-preserving</i> when \(\det L = 1\).<br />
+If \(\det L = -1\) then \(E(v) = Lv + c\) is <i>orientation-reversing</i> (it contains a reflection).<br />
+
+<br />
+
+<h3>Congruence of space curves</h3>
+
+If two space curves are related by a Euclidean motion, then they are essentially the same curve, since all we have done is change the coordinate system by some combination of rotations, translations and reflections. The following definition makes this precise.<br />
+
+<br />
+
+<b>Definition</b><br />
+
+Two space curves \(p, q : I \rightarrow \mathbb{R}^3\) are <i>congruent</i> if there is a Euclidean motion \(E : \mathbb{R}^3 \rightarrow \mathbb{R}^3\) such that
+\[
+E(p(t)) = q(t) \quad \text{for all \(t \in I\)} .
+\]
+If \(E\) is also orientation-preserving, then we say that \(p\) and \(q\) are <i>properly congruent</i>.<br />
+
+<h3>The Fundamental Theorem of Space Curves</h3>
+
+Now we can prove the main theorem of today's lecture (and the first part of the course). This theorem says that if two curves have no inflection points, then their curvature and torsion is the same if and only if the curves are properly congruent. Therefore the curvature and torsion completely determine the curve up to proper congruence. <br />
+
+<br />
+
+Moreover, if the curvature of two curves is the same, but their torsion differs by a sign, then the curves are related by an orientation-reversing Euclidean motion.<br />
+
+<br />
+
+<b>Theorem.</b> (Fundamental Theorem of Space Curves)<br />
+
+<ol type="i">
+
+<li> Let \(p, q : I \rightarrow \mathbb{R}^3\) be arclength parametrised paths with curvatures
+\[
+\kappa_p(s) = \kappa_q(s) \neq 0 \quad \text{for all \(s \in I\)}
+\]
+and torsions
+\[
+\tau_p(s) = \tau_q(s) \quad \text{for all \(s \in I\)} .
+\]
+Then \(p\) and \(q\) are properly congruent.<br />
+
+<br />
+
+If \(\kappa_p(s) = \kappa_q(s) \neq 0\) and \(\tau_p(s) = -\tau_q(s)\) for all \(s \in I\) then \(p\) and \(q\) are congruent, but not properly congruent.<br />
+
+<br />
+
+<li> Let \(\kappa : I \rightarrow \mathbb{R}_{>0}\) and \(\tau : I \rightarrow \mathbb{R}\) be smooth functions. Then there exists a smooth path \(p : I \rightarrow \mathbb{R}^3\) parametrised by arclength that has curvature \(\kappa\) and torsion \(\tau\). Moreover, \(p\) is determined up to proper congruence.<br />
+
+<br />
+
+</ol>
+
+<h3>Idea of the proof</h3>
+
+A full proof is given in Appendix A of the <a href="Differential_Geometry_Lecture_Notes.pdf">Lecture Notes</a>. There are many details, and we won't go through all of them here, but it is useful to give the idea behind the proof so that we can see how the theory that we have developed is used in proving this theorem.<br />
+
+<br />
+
+The key idea is to use the <a href="Lecture_12_Frenet_formulas.html">Frenet formulas</a>
+\[
+\left( \begin{matrix} T'(s) \\ N'(s) \\ B'(s) \end{matrix} \right) = \left( \begin{matrix} 0 & \kappa(s) & 0 \\ -\kappa(s) & 0 & -\tau(s) \\ 0 & \tau(s) & 0 \end{matrix} \right) \left( \begin{matrix} T(s) \\ N(s) \\ B(s) \end{matrix} \right)
+\]
+
+This is a system of ODEs in the variables \((T(s), N(s), B(s))\). General ODE theory shows that a solution exists and is unique up to a constant of integration, which in this case is \(T(s_0) = p'(s_0)\) for some \(s_0 \in I\).<br />
+
+<br />
+
+We can then solve for \(p(s)\) by integrating the solution \(p'(s) = T(s)\).<br /><br />
+
+Again, this solution is unique up to another constant of integration \(p(s_0)\).<br /><br />
+
+Therefore, if we know the initial position \(p(s_0)\) and the initial velocity \(p'(s_0)\), then we can reconstruct the entire path from the Frenet formulas.<br />
+
+<br />
+
+There are many small details missing from the above sketch of the proof, and you should refer to Appendix A of the <a href="Differential_Geometry_Lecture_Notes.pdf">lecture notes</a> for the complete details.<br /><br />
+
+The key takeaway from this theorem is the idea that <i>curvature and torsion determine the curve</i>, therefore these two intrinsic invariants are the only invariants we need to specify a curve (up to Euclidean motions).<br />
+
+<br />
+
+<h3>Next time</h3>
+We will begin studying surfaces, which is the second part of the course. Unfortunately Geogebra's pictures of surfaces aren't very illuminating, so the website will only include pictures of a few examples towards the end of the course, rather than detailed lecture notes as we have for the first part of the course.<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

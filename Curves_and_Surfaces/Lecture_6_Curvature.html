@@ -1,0 +1,224 @@
+<HTML>
+<HEAD>
+<TITLE>The unit tangent vector and curvature</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">The unit tangent vector and curvature</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+Recall that in the lecture on <a href="Lecture_4_Arclength_Parametrisation.html">parametrising by arclength</a> we showed that a smooth regular path \(p : I \rightarrow \mathbb{R}^3\) always has a <i>reparametrisation by arclength</i> \(q : J \rightarrow \mathbb{R}^3\) such that \(|q'(s)| = 1\) for all \(s \in J\).<br />
+We also previously defined the <i>tangent vector</i> \(p'(t)\).<br />
+
+<br />
+
+<b>Definition.</b> If \(p'(t) \neq 0\), then the <i>unit tangent vector</i> is
+\[
+T(t) = \frac{p'(t)}{|p'(t)|} .
+\]
+
+<br />
+
+<b>Note.</b> 
+
+<ol type="i">
+
+<li> If \(p : I \rightarrow \mathbb{R}^3\) is regular, then the unit tangent vector exists for all \(t \in I\).
+
+<li> If \(p = p(s)\) is parametrised by arclength, then \(T(s) = p'(s)\).
+
+</ol>
+
+<font color="blue">From now on we will use \(s\) as the parameter for any smooth regular path parametrised by arclength.</font><br />
+
+<br />
+
+<b>Lemma.</b> The derivative \(T'(t)\) is always orthogonal to \(T(t)\).<br />
+
+<br />
+
+<b>Proof.</b><br />
+
+Since the unit tangent vector has constant length, then
+\[
+\begin{aligned}
+\left| T(t) \right| = 1 \quad \Rightarrow \quad T(t) \cdot T(t) & = \left| T(t) \right|^2 = 1 \\
+ \Rightarrow \quad \frac{d}{dt} \left( T(t) \cdot T(t) \right) & = 0 \\
+\Leftrightarrow \quad T'(t) \cdot T(t) + T(t) \cdot T'(t)) & = 0 \quad \text{(Product Rule for dot product)} \\
+\Leftrightarrow \quad 2 T'(t) \cdot T(t) & = 0 . \quad \text{(Commutativity of dot product)}
+\end{aligned}
+\]
+Therefore \(T'(t) \cdot T(t) = 0\), and so \(T'(t)\) is always orthogonal to \(T(t)\).<br />
+
+<br />
+
+<b>Example 1.</b> (Circle of radius \(r\))<br />
+
+Consider the parametrisation \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) of the circle of radius \(r\) given by
+\[
+p(t) = \left(r \cos t, r \sin t, 0 \right) .
+\]
+Then we can compute the unit tangent vector as follows.
+\[
+\begin{aligned}
+p'(t) & = \left( - r \sin t, r \cos t, 0 \right) \\
+\left| p'(t) \right| & = r  \\
+\Rightarrow \quad T(t) & = \frac{p'(t)}{|p'(t)|} = \left( - \sin t, \cos t, 0 \right)
+\end{aligned}
+\]
+Then we also see that \(T'(t) = (-\cos t, \sin t, 0)\).<br />
+
+<br />
+
+The picture below shows the tangent vector <font color="red">\(p'(t)\)</font>, the unit tangent vector \(T(t)\) and the derivative <font color="blue">\(T'(t)\)</font> for the circle. You can click and drag the point \(P\) to move it around the circle, and you can also move the point \(A\) to change the radius of the circle.<br /><br />
+
+
+<center>
+<iframe scrolling="no" title="Circle with unit tangent vector and its derivative" src="https://www.geogebra.org/material/iframe/id/zy9z5yjs/width/645/height/511/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="645px" height="511px" style="border:0px;"> </iframe>
+</center>
+
+<b>Example 2.</b> (Helix)<br />
+
+Consider the parametrisation \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) of the helix given by
+\[
+p(t) = \left( r \cos t, r \sin t, ct \right) \quad \text{for \(r, c > 0\)} .
+\]
+Then
+\[
+\begin{aligned}
+p'(t) & = (-r \sin t, r \cos t, c) \\
+\left| p'(t) \right| & = \sqrt{r^2 + c^2} .
+\end{aligned}
+\]
+Therefore the unit tangent vector and its derivative are
+\[
+\begin{aligned}
+T(t) & = \frac{p'(t)}{|p'(t)|} = \frac{1}{\sqrt{r^2 + c^2}} \left( -r\sin t, r\cos t, c \right) \\
+T'(t) & = \frac{1}{\sqrt{r^2+c^2}} \left( - r\cos t, -r\sin t, 0 \right) .
+\end{aligned}
+\]
+
+Once again, the picture below shows the tangent vector <font color="red">\(p'(t)\)</font>, the unit tangent vector \(T(t)\) and the derivative <font color="blue">\(T'(t)\)</font> for the helix.<br /><br />
+
+<center>
+<iframe scrolling="no" title="Helix with unit tangent vector" src="https://www.geogebra.org/material/iframe/id/xa3tzezh/width/791/height/602/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="602px" style="border:0px;"> </iframe>
+</center>
+
+<br />
+
+<b>Example.</b> (Circle with arclength parametrisation)<br />
+Now we will do the example of the circle again, except this time we will parametrise by arclength. Define \(q : \mathbb{R} \rightarrow \mathbb{R}^3\) by
+\[
+\begin{aligned}
+q(s) & = \left( r \cos \left( \frac{s}{r} \right), r \sin \left( \frac{s}{r} \right), 0 \right) \\
+\Rightarrow \quad q'(s) & = \left( - \sin \left( \frac{s}{r} \right), \cos \left( \frac{s}{r} \right), 0 \right) \\
+ & = T(s) \quad \quad \text{(since the parametrisation is by arclength)} \\
+\Rightarrow \quad T'(s) & = \left( -\frac{1}{r} \cos \left( \frac{s}{r} \right), - \frac{1}{r} \sin \left( \frac{s}{r} \right), 0 \right) \\
+\Rightarrow \quad \left| T'(s) \right| & = \frac{1}{r} .
+\end{aligned}
+\]
+
+<b>Note.</b> Comparing this result for \(|T'(s)|\) to our computation of \(|T'(t)|\) above for a different parametrisation shows that the magnitude \(|T'|\) depends on the choice of parametrisation.<br />
+
+<br />
+
+<h3>Curvature and the curvature vector</h3>
+
+Intuitively, the magnitude \(|T'(t)|\) measures how fast the unit tangent vector is moving. If we parametrise by arclength, which is a canonical parametrisation of a regular curve, then \(|T'(s)|\) measures "how much the path is curving".<br />
+
+<br />
+
+<b>Definition.</b> (Curvature and the Curvature Vector)<br />
+
+Let \(C\) be a regular smooth curve and let \(p : I \rightarrow \mathbb{R}^3\) be an arclength parametrisation. The <i>curvature vector</i> is
+\[
+k(s) = T'(s) = p''(s) \in \mathbb{R}^3
+\]
+and the <i>curvature</i> is
+\[
+\kappa(s) = \left| k(s) \right| = \left| T'(s) \right| \in \mathbb{R}_{\geq 0} .
+\]
+
+<br />
+
+<b>Note.</b>
+
+<ol type="i">
+
+<li> The parametrisation must be an arclength parametrisation when computing the curvature.<br />
+<font color="red">If the parametrisation is not by arclength, then \(|T'(t)|\) will not give you the correct answer for the curvature</font>.
+
+<li> We showed above that \(T'(s) \cdot T(s)\), therefore <i>the curvature vector \(k(s)\) is always orthogonal to \(T(s)\)</i>.
+
+<li> \(k(s)\) measures the change of direction of \(T(s)\), while \(\kappa(s)\) measures the magnitude of this change of direction.
+
+<li> In our example of the circle, we computed \(\kappa(s) = | T'(s) | = \frac{1}{r}\). Therefore the curvature becomes large as the radius becomes small, which matches our intuition that the circle is more tightly curved when the radius is small.
+
+</ol>
+
+
+Now we will compute the curvature of the helix.<br /><br />
+
+<b>Example.</b> (Helix)<br />
+
+Recall that the arclength parametrisation of the helix is \(q : \mathbb{R} \rightarrow \mathbb{R}^3\) given by
+\]
+and so the reparametrisation by arclength is given by 
+\[
+\begin{aligned}
+q : \mathbb{R} & \rightarrow \mathbb{R}^3 \\
+q(s) & = \left( r \cos \left( \frac{s}{\sqrt{r^2 + c^2}} \right), r \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{cs}{\sqrt{r^2+c^2}} \right) .
+\end{aligned}
+\]
+The unit tangent vector is
+\[
+T(s) = q'(s) = \frac{1}{\sqrt{r^2 + c^2}} \left( -r \sin \left( \frac{s}{\sqrt{r^2 + c^2}} \right), r \cos \left( \frac{s}{\sqrt{r^2 + c^2}} \right), c \right) 
+\]
+Therefore the curvature vector \(k(s)\) and the curvature \(\kappa(s)\) are
+\[
+\begin{aligned}
+k(s) = T'(s) & = \frac{1}{r^2 + c^2} \left( - r \cos \left( \frac{s}{\sqrt{r^2 + c^2}} \right), -r \sin \left( \frac{s}{\sqrt{r^2 + c^2}} \right), 0 \right) \\
+\kappa(s) = \left| k(s) \right| & = \frac{r}{r^2 + c^2} .
+\end{aligned}
+\]
+
+<br />
+
+<b>Note.</b> In the special case \(c = 0\), the path \(q : \mathbb{R} \rightarrow \mathbb{R}^3\) parametrises a circle, and so the curvature is \(\kappa(s) = \frac{1}{r}\), which agrees with our result from the previous example.<br />
+
+<br />
+
+<b>Final Remark.</b><br />
+We saw in the earlier lectures that parametrising by arclength often leads to very complicated expressions for the parametrisation and the unit tangent vector, which sometimes makes it difficult to compute the curvature using the above formula. Later we will write down a formula for the curvature which is valid in any parametrisation, but for now we will use the arclength parametrisation in order to focus on explaining the intuition behind the curvature (and the torsion, which we will define soon).<br />
+
+<br />
+
+<h3>Next time</h3>
+We will define the <i>Frenet frame</i> which gives us a canonical coordinate system on a curve.
+
+<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<TITLE>Orientation and signed curvature</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Orientation and signed curvature</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+Recall from the <a href="Lecture_6_Curvature.html">lecture on curvature</a> that if \(p : I \rightarrow \mathbb{R}^3\) is a smooth regular path parametrised by arclength, then the <i>curvature</i> is
+\[
+\kappa(s) = \left| p''(s) \right| = \left| T'(s) \right| \in \mathbb{R}_{\geq 0} .
+\]
+In the <a href="Lecture_9_Zero_torsion_planar.html">last lecture</a> we showed that a curve with no inflection points has zero torsion if and only if it is planar. If a curve is planar, then we can talk about notions such as "up" and "down", and whatit means for a path to "curve to the left" or "curve to the right". These are ideas that we understand intuitively from walking/driving/moving around on the surface of the earth (or at least a small region that is approximately planar).<br />
+
+<br />
+
+In today's lecture we will make this precise by defining the orientation of a plane and using this to define the signed curvature of a path in an oriented plane.<br />
+
+<br />
+
+<b>Definition.</b> (Oriented plane)<br />
+A plane \(\Pi \subset \mathbb{R}^3\) is <i>oriented</i> by making a constant choice of unit normal vector at each point of \(\Pi\).<br />
+
+Let \(\xi \in \mathbb{R}^3\) denote the constant unit normal vector to \(\Pi\). Then given a path \(p : I \rightarrow \mathbb{R}^3\) in the oriented plane \((\Pi, \xi)\), the vector \(T(s)\) is always parallel to the plane \(\Pi\), which then implies that
+\[
+T(s) \cdot \xi = 0 \quad \text{for all \(s \in I\)}.
+\]
+Therefore, by properties of the cross product, the vector
+\[
+\nu(s) = \xi \times T(s) 
+\]
+is perpendicular to both \(\xi\) and \(T(s)\), and therefore 
+
+<ol type="i">
+
+<li> it must be parallel to the plane \(\Pi\), and
+
+<li> perpendicular to \(T(s)\).
+
+</ol>
+
+Therefore we must have
+\[
+\nu(s) = \pm N(s) .
+\] 
+
+<b>Definition.</b> (Signed curvature)<br />
+
+The <i>signed curvature</i> of a planar curve is the function \(\kappa_s : I \rightarrow \mathbb{R}\) defined by the formula
+\[
+\begin{aligned}
+\kappa_s(s) & = k(s) \cdot \nu(s) \\
+ & = k(s) \cdot \left( \xi \times T(s) \right) \\
+ & = \left[ k(s), \xi, T(s) \right] .
+\end{aligned}
+\]
+(Recall that the last line uses the <a href="Lecture_8_Torsion.html#scalar_triple_def">scalar triple product</a> from the <a href="Lecture_8_Torsion.html">lecture on torsion</a>.)<br />
+
+<br />
+
+Therefore, since \(\nu(s)\) is a unit vector, then \(\kappa_s(s) = \pm \kappa(s)\), where the sign is determined by \(N(s) \cdot \nu(s) = \pm 1\), or equivalently 
+\[
+\frac{\nu(s) \cdot k(s)}{|k(s)|} = \pm 1 .
+\]<br />
+
+<br />
+
+<b>Intuition behind the signed curvature</b><br />
+Recall that the curvature measures the amount of "turning" in the curve at the point \(p(s)\), while the signed curvature contains the additional information about the <i>direction</i> of the turning.<br />
+
+For example, if you place your right hand in \(\mathbb{R}^3\) with your thumb pointing along the unit vector \(\xi\) normal to the plane of the curve and your forefinger pointing in the direction of the unit tangent vector \(T(s)\), then the signed curvature is positive if your fingers curl in the same direction as the the curve, and the signed curvature is negative if the curve turns in the opposite direction.<br />
+
+<br />
+
+We can visualise all of the above definitions in the following example.<br />
+
+<br />
+
+<b>Example.</b> (Signed curvature of a cubic planar curve)<br />
+
+Define the cubic curve \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by
+\[
+p(t) = \left(t, t^3, 0 \right) ,
+\] 
+and define the unit normal vector \(\xi = (0, 0, 1)\). Then
+\[
+\begin{aligned}
+p'(t) & = (1, 3t^2, 0) \\
+\Rightarrow \quad T(t) & = \frac{(1, 3t^2, 0)}{\sqrt{1+9t^4}} \\
+\Rightarrow \quad \xi \times T(t) & = \frac{(-3t^2, 1, 0)}{\sqrt{1 + 9t^4}} .
+\end{aligned}
+\]
+
+This is illustrated in the following diagram. The curve \(p(t)\) is contained in the plane, and the normal vector \(\xi\) points upwards. You can see the unit normal vector \(\xi\), together with the curvature vector \(k(s)\) (coloured in green) and the unit tangent vector \(T(s)\) (coloured in blue). By clicking and dragging the point \(P\) along the curve, you can see that the signed curvature is positive when the curvature vector \(k(s)\) and the vector \(\nu(s) = \xi \times T(s)\) (coloured in red) point in the same direction, and it is negative when they point in opposite directions.<br />
+
+<br />
+
+<center>
+<iframe scrolling="no" title="Signed curvature of the cubic curve" src="https://www.geogebra.org/material/iframe/id/ganphja4/width/791/height/602/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="602px" style="border:0px;"> </iframe>
+</center>
+ 
+<br />
+
+
+
+
+
+
+<h3>Next time</h3>
+Now that we have defined the curvature and torsion and studied the intuition behind them, in the next lecture we will prove some useful formulas that allow us to compute the curvature and torsion without having to reparametrise by arclength. As we have seen, reparametrising by arclength can sometimes be difficult, even for curves with very simple equations (such as the cubic curve above), and so these equations will simplify the process of computing the curvature and torsion.<br />
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

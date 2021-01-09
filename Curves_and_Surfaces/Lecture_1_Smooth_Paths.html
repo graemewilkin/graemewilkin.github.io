@@ -54,16 +54,27 @@ The image \(p(I) \subset \mathbb{R}^3\) is called the <i>track</i>, and we say t
 <li> There may be many different smooth paths with the same track (see the examples below).
 </ul>
 
-<b>Examples.</b>
-<ol type="a">
-<li> <a name="L1_Circle"><b>(Circle)</b></a> Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (r \cos t, r \sin t, 0)\). This defines a smooth path whose track is a circle of radius \(r\) in the \(xy\) plane. 
-<li> <b>(Graph of a function)</b> Let \(f : \mathbb{R} \rightarrow \mathbb{R}\) be a smooth function. Then \(p : \mathbb{R} \to \mathbb{R}^3\) given by \(p(t) = (t, f(t), 0) \) defines a smooth path whose track is the graph of \(f\) in the \(xy\) plane.
-<li> <a name="L1_Helix"><b>(Helix)</b></a> Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (r \cos t, r \sin t, ct)\). This defines a smooth path whose track is a <i>helix</i> in \(\mathbb{R}^3\).<br />
-Note that the projection of the helix to the \(xy\) plane is just the circle from the first example. Therefore the track of the helix lies on the surface of the cylinder \( \{(x, y, z) \in \mathbb{R}^3 \, : \, x^2 + y^2 = r^2 \} \).
-</ol>
+<a name="L1_Circle"></a><b>Example 1.</b> (Circle)<br />
+Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (r \cos t, r \sin t, 0)\). This defines a smooth path whose track is a circle of radius \(r\) in the \(xy\) plane.<br />
+
+<br /> 
+
+<b>Example 2.</b> (Graph of a function)<br /> 
+Let \(f : \mathbb{R} \rightarrow \mathbb{R}\) be a smooth function. Then \(p : \mathbb{R} \to \mathbb{R}^3\) given by \(p(t) = (t, f(t), 0) \) defines a smooth path whose track is the graph of \(f\) in the \(xy\) plane.<br />
+
+<br />
+
+<a name="L1_Helix"><b>Example 3.</b> (Helix)</a><br /> 
+Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (r \cos t, r \sin t, ct)\). This defines a smooth path whose track is a <i>helix</i> in \(\mathbb{R}^3\).<br />
 
 
-The last example of the helix is illustrated in the following diagram. You can click and drag the picture to view the helix from different angles.
+Note that the projection of the helix to the \(xy\) plane is just the circle from the first example. Therefore the track of the helix lies on the surface of the cylinder \( \{(x, y, z) \in \mathbb{R}^3 \, : \, x^2 + y^2 = r^2 \} \).<br />
+
+<br />
+
+The last example of the helix is illustrated in the following diagram. You can click and drag the picture to view the helix from different angles.<br />
+
+<br />
 
 
 <center>
@@ -81,6 +92,51 @@ The <i>tangent vector</i> of a smooth path \(p : I \rightarrow \mathbb{R}^3\) at
 <b>Note.</b> We can think of the tangent vector as the <i>velocity</i> of an object travelling along the smooth path \(p(t)\).<br />
 
 As we saw earlier, any acceleration/braking forces are applied in a direction tangent to the curve.<br /><br />
+
+<a name="L1_Tangent_Examples"></a>
+<b>Example 1.</b> (Circle)<br />
+
+Returning to the example of the circle from above, the parametrisation \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) given by \(p(t) = (r \cos t, r \sin t, 0)\) has tangent vector
+\[
+p'(t) = \left( - r \sin t, r \cos t, 0 \right) .
+\]
+
+The following picture shows a circle with its tangent vector. You can click and drag to move the point \(P\) around the circle, and you can also move the point \(A\) to change the radius of the circle.<br />
+
+<center>
+<iframe scrolling="no" title="Circle with tangent vector" src="https://www.geogebra.org/material/iframe/id/xakgtczm/width/645/height/511/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="645px" height="511px" style="border:0px;"> </iframe>
+</center>
+
+<br />
+
+<b>Example 2.</b> (Graph of a function)<br />
+Given a smooth function \(f : \mathbb{R} \rightarrow \mathbb{R}\), using the parametrisation \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) given above we have
+\[
+\begin{aligned}
+p(t) & = \left( t, f(t), 0 \right) \\
+p'(t) & = \left( 1, f'(t), 0 \right) .
+\end{aligned}
+\]
+
+This is illustrated in the picture below. You can click and drag to move the point \(p\) along the path, and the tangent vector will follow.<br />
+
+<br />
+
+<center>
+<iframe scrolling="no" title="Graph of a function with tangent vector" src="https://www.geogebra.org/material/iframe/id/mfp4meyv/width/791/height/469/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="469px" style="border:0px;"> </iframe>
+</center>
+
+
+<br />
+
+<b>Example 3.</b> (Helix)<br />
+The parametrisation of the helix given above by \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) has tangent vector
+\[
+\begin{aligned}
+p(t) & = \left( r \cos t, r \sin t, ct \right) \\
+p'(t) & = \left( -r \sin t, r \cos t, c \right) .
+\end{aligned}
+\]
 
 The following picture shows the helix with the tangent vector. You can click and drag the basepoint of the vector to move it around the curve.
 

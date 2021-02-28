@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>An example of the shape operator</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">An example of the shape operator</h1>
+
+<p align="right"><a href="../index.html">Back to Curves and Surfaces homepage</a></p>
+
+The picture below shows the surface \(S\) defined as the graph of the function \(f : \mathbb{R}^2 \rightarrow \mathbb{R}^3\) given by \(f(x,y) = x^2 + ry^2\). In Lecture 3 of Week 8 we parametrised this surface by
+\[
+p : \mathbb{R}^2 \rightarrow \mathbb{R}^3, \quad p(u,v) = \left( u, v, f(u,v) \right) .
+\] 
+At the origin \(p(0,0) \in S\), the tangent space \(T_{p(0,0)} S\) has a basis \( \{p_u(0,0), p_v(0,0)\}\). With respect to this basis, we computed the shape operator as
+\[
+A_{p(0,0)} = \left( \begin{matrix} 2 & 0 \\ 0 & 2r \end{matrix} \right)
+\]
+The eigenvalues of this matrix are \(2\) and \(2r\). When \(r > 0\) then the eigenvalues have the same sign, and so the surface has a bowl-shape at the origin (you can see this in the diagram below by choosing a positive value of \(r\)). When \(r < 0\) the eigenvalues have opposite signs, and so the surface has a saddle-shape at the origin (again, you can see this in the picture below by choosing a negative value of \(r\)). <br />
+
+<br />
+
+Therefore, this example should give you the intuition that the eigenvalues of the shape operator are (as the name suggests) telling us about the <i>shape</i> of the surface.<br />
+
+<br />
+
+<center>
+<iframe scrolling="no" title="The shape of a paraboloid" src="https://www.geogebra.org/material/iframe/id/jbhhyznk/width/1168/height/592/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="1168px" height="592px" style="border:0px;"> </iframe>
+</center>
+
+
+<br />
+
+
+
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

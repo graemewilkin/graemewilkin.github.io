@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>Classifying points on the torus</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</HEAD>
+<BODY>
+
+<h1 align="center">Classifying point on the torus</h1>
+
+<p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
+
+
+The picture below shows the torus parametrised by
+\[
+p : (0, 2\pi) \times (0, 2\pi) \rightarrow \mathbb{R}^3, \quad p(u,v) = \left( \cos(v) \left( R + r \sin(u) \right), \sin(v) \left( R + r \sin(u) \right), r \cos(u) \right) .
+\]
+In the picture below you can move the sliders to vary the values of the outer radius \(R\) and inner radius \(r\) (so that the size of the torus varies) and the values of the parameters \(u\) and \(v\) (so that the point moves around the torus). <br />
+
+<br />
+
+As you can see by varying \(u\) and \(v\), the blue circle is given by fixing \(v\) and varying \(u\), therefore the tangent vector to this circle will be \(p_u\) and the curvature vector of the blue circle is \(p_{uu}\). Similarly, the black circle is given by fixing \(u\) and varying \(v\), therefore the tangent vector is \(p_v\) and the cuvrature vector is \(p_{vv}\).<br />
+
+<br />
+
+We can now use this to compute the normal curvatures. In Example 3.10 in the lecture notes (which I strongly recommend you do for yourself!) we showed that the first and second fundamental forms are diagonal, and therefore (from our Lemma in Week 10, Lecture 4) we see that the principal curvatures are given by
+\[
+\kappa_1 = \frac{e}{E} = \frac{p_{uu} \cdot \xi}{|p_u|^2}, \quad \kappa_2 = \frac{g}{G} = \frac{p_{vv} \cdot \xi}{|p_v|^2} .
+\]
+Therefore the <i>signs</i> of the principal curvatures are the same as the signs of \(p_{uu} \cdot \xi\) and \(p_{vv} \cdot \xi\). Since \(p_{uu}\) is the curvature vector of the blue circle, then it always points towards the centre of the blue circle, and so 
+\[
+p_{uu} \cdot \xi < 0 \quad \Rightarrow \quad \kappa_1 < 0 .
+\]
+So \(\kappa_1\) is always negative. Now \(p_{vv}\) is the curvature vector of the black circle, therefore it always points towards the centre of this circle. The dot product of this with the normal vector will be negative (respectively zero, or positive) depending on whether the normal vector points outwards (respectively straight up or straight down, or inwards).<br />
+
+<br />
+
+Therefore we can classify the points where \(\kappa_2\) is negative, zero or positive, and hence the points where the Gauss curvature \(K = \kappa_1 \kappa_2\) is positive, zero or negative, hence the points on the torus which are elliptic, parabolic or hyperbolic.<br />
+
+<br />
+
+
+<center>
+<iframe scrolling="no" title="Classifying points on the torus" src="https://www.geogebra.org/material/iframe/id/ysudkkck/width/977/height/446/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="977px" height="446px" style="border:0px;"> </iframe>
+</center>
+
+
+<br />
+
+
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+
+
+</BODY>
+

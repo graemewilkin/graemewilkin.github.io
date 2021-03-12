@@ -12,7 +12,7 @@
 </HEAD>
 <BODY>
 
-<h1 align="center">Classifying point on the torus</h1>
+<h1 align="center">Classifying points on the torus</h1>
 
 <p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
 
@@ -25,7 +25,7 @@ In the picture below you can move the sliders to vary the values of the outer ra
 
 <br />
 
-As you can see by varying \(u\) and \(v\), the blue circle is given by fixing \(v\) and varying \(u\), therefore the tangent vector to this circle will be \(p_u\) and the curvature vector of the blue circle is \(p_{uu}\). Similarly, the black circle is given by fixing \(u\) and varying \(v\), therefore the tangent vector is \(p_v\) and the cuvrature vector is \(p_{vv}\).<br />
+As you can see by varying \(u\) and \(v\), the blue circle is given by fixing \(v\) and varying \(u\), therefore the tangent vector to this circle will be \(p_u\) and the curvature vector of the blue circle is \(p_{uu} / |p_u|\). Similarly, the black circle is given by fixing \(u\) and varying \(v\), therefore the tangent vector is \(p_v\) and the cuvrature vector is \(p_{vv}\).<br />
 
 <br />
 
@@ -33,11 +33,11 @@ We can now use this to compute the normal curvatures. In Example 3.10 in the lec
 \[
 \kappa_1 = \frac{e}{E} = \frac{p_{uu} \cdot \xi}{|p_u|^2}, \quad \kappa_2 = \frac{g}{G} = \frac{p_{vv} \cdot \xi}{|p_v|^2} .
 \]
-Therefore the <i>signs</i> of the principal curvatures are the same as the signs of \(p_{uu} \cdot \xi\) and \(p_{vv} \cdot \xi\). Since \(p_{uu}\) is the curvature vector of the blue circle, then it always points towards the centre of the blue circle, and so 
+Therefore the <i>signs</i> of the principal curvatures are the same as the signs of \(p_{uu} \cdot \xi\) and \(p_{vv} \cdot \xi\). Since \(p_{uu}\) is a positive scalar multiple of the curvature vector of the blue circle, then it always points towards the centre of the blue circle, and so 
 \[
 p_{uu} \cdot \xi < 0 \quad \Rightarrow \quad \kappa_1 < 0 .
 \]
-So \(\kappa_1\) is always negative. Now \(p_{vv}\) is the curvature vector of the black circle, therefore it always points towards the centre of this circle. The dot product of this with the normal vector will be negative (respectively zero, or positive) depending on whether the normal vector points outwards (respectively straight up or straight down, or inwards).<br />
+So \(\kappa_1\) is always negative. Now \(p_{vv}\) is a positive scalar multiple of the curvature vector of the black circle, therefore it always points towards the centre of this circle. The dot product of this with the normal vector will be negative (respectively zero, or positive) depending on whether the normal vector points outwards (respectively straight up or straight down, or inwards).<br />
 
 <br />
 

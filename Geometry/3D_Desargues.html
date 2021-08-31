@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<TITLE>A 3D picture of Desargues' Theorem</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</HEAD>
+<BODY>
+
+<h1 align="center">A 3D picture of Desargues' Theorem</h1>
+
+<p align="right"><a href="index.html">Back to Geometry homepage</a></p>
+
+Recall that <a href="Desargues.html">Desargues' theorem</a> says that a pair of triangles that are in perspective from a point must also be in perspective from a line, and vice versa. Below is a picture of such a <a href="https://en.wikipedia.org/wiki/Desargues_configuration">Desargues configuration</a>, consisting of a pair of triangles \(\Delta ABC\) and \(\Delta DEF\), which are in perspective from both the point \(O\) and the line through \(X\), \(Y\) and \(Z\).<br />
+<br />
+
+<CENTER>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/xvnzdewa/width/901/height/616/border/888888/sri/true/ld/true/sdz/true" width="901px" height="616px" style="border:0px;"> </iframe>
+</CENTER>
+<br />
+
+In fact, the above picture is a 3D picture of two triangles that are in perspective from a point and a line. You can click and drag on the picture to see the 3D configuration from different perspectives. Below we will explain how this 3D point of view helps to prove Desargues' theorem.<br />
+
+<br />
+
+Recall that two non-parallel lines in the plane always intersect in a point. Since Desargues' theorem is a theorem in projective geometry, then we also consider two parallel lines to intersect on the line at infinity. In three dimensional space this is not always true; two lines do not necessarily intersect. Therefore the first thing we need to understand is why the lines \(AB\) and \(DE\) intersect at the point \(X\), and similarly for the lines \(BC\) and \(EF\) (which intersect at \(Y\)) and the lines \(CA\) and \(FD\) (which intersect at the point \(Z\)).<br />
+
+<br />
+
+To understand this, first consider the plane through the points \(O\), \(A\) and \(B\). Since the two triangles are in perspective from the point \(O\), then this plane also contains the points \(D\) and \(E\). Therefore the lines \(AB\) and \(DE\) are both on this plane, so they must intersect at some point \(X\) on this plane. <br />
+
+<br />
+
+Now consider the planes through \(\Delta ABC\) (coloured blue in the diagram below) and \(\Delta DEF\) (coloured green in the diagram below). The point \(X\) must lie on both these planes, since it lies on the line \(AB\) and on the line \(DE\). Therefore it lies on the line of intersection of these planes, which is marked in red in the diagram below. We can construct the point \(X\) as the intersection of this line with the plane through \(O\), \(A\) and \(B\) considered in the previous paragraph (coloured orange in the diagram below).<br />
+
+<br />
+
+<CENTER>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/wawn3auz/width/901/height/616/border/888888/sri/true/ld/true/sdz/true" width="901px" height="616px" style="border:0px;"> </iframe>
+</CENTER>
+
+<br />
+
+You can click and drag to change the viewpoint of the above diagram. Try looking along the lines \(AB\) and \(DE\) to see that the three planes do intersect at the point \(X\).<br />
+
+<br />
+
+Therefore we have shown that \(AB\) and \(DE\) intersect at a point \(X\), and moreover we have shown that \(X\) must lie on the line of intersection of the two planes through \(\Delta ABC\) and \(\Delta DEF\) (coloured red in the diagram above). Note that they key to the whole argument is that the two triangles are in perspective from the point \(O\), therefore \(A\), \(B\), \(D\) and \(E\) all lie on the same plane.<br />
+
+<br />
+
+Exactly the same argument shows that \(BC\) and \(EF\) intersect at a point \(Y\) on the same line, and that \(CA\) and \(FD\) intersect at a point \(Z\) on this line as well. <br />
+
+<br />
+
+Therefore the triangles \(\Delta ABC\) and \(\Delta DEF\), which we assumed were in perspective from a point \(O\), are in perspective from a line, and the same statement remains true after projecting the whole configuration to the plane. This gives us a proof of one direction of Desargues' theorem.<br />
+
+<br />
+
+To see the converse, suppose that the two triangles are in perspective from a line. In particular, since \(AB \cap DE = X\), then \(A\), \(B\), \(D\) and \(E\) must lie on a plane in \(\mathbb{R}^3\) (coloured orange in the picture below). Similar reasoning shows that \(B\), \(C\), \(E\) and \(F\) must also lie on a plane (coloured blue), and \(C\), \(A\), \(F\) and \(D\) lie on another plane (coloured green). Three planes must intersect in a point in \(\mathbb{R}^3\), which is labelled \(O\), in the picture below. Therefore the lines \(AD\) (which lies on the green and orange planes), \(BE\) (which lies on the orange and blue planes) and \(CF\) (which lies on the blue and green planes) must all intersect at \(O\), which proves that the triangles are in perspective from a point.<br />
+
+<br />
+
+<CENTER>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/d6wqzq7e/width/901/height/616/border/888888/sri/true/ld/true/sdz/true" width="901px" height="616px" style="border:0px;"> </iframe>
+</CENTER>
+
+<br />
+
+Once again, you can click and drag the above picture to see it from different viewpoints. When viewed from the correct angle, it is clear that the lines \(AD\), \(BE\) and \(CF\) really do lie on the intersections of the given planes. <br />
+
+
+
+<p>
+<a href="http://www.mathjax.org"><img align="right" title="Powered by MathJax" src="http://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /> </a>
+</p>
+
+<br /><br />
+
+<p>
+<a href="http://www.vim.org/"><img align="right" src="../files/icons/anim_written_in_vi.gif" border="0"></a>
+</p>
+
+</BODY>

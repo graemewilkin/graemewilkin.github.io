@@ -17,7 +17,7 @@
 <p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
 
 
-Recall from the <a href="Lecture_3_Reparametrisations.html">previous lecture</a> that we defined what it means to reparametrise a smooth path and studied some examples. We then finished with the definition of a smooth regular curve. Today we will discuss how to <i>reparametrise smooth regular curves by arclength</i>. <br />
+Recall from the <a href="Lecture_3_Reparametrisations.html">previous lecture</a> that we defined what it means to reparametrise a smooth path and studied some examples. We then finished with the definition of a smooth regular curve. Today we will discuss the most important example of reparametrisation, which is <i>reparametrising smooth regular curves by arclength</i>. <br />
 
 <br />
 
@@ -35,7 +35,7 @@ s(t, t_0) = \int_{t_0}^t \left| p'(u) \right| \, du
 
 <h3>Arclength does not depend on the parametrisation</h3>
 
-It is important to note that the arclength does not depend on the choice of parametrisation. To see this, let \(p : I \rightarrow \mathbb{R}^3\) and \(q : J \rightarrow \mathbb{R}^3\) be smooth paths, and let \(t : J \rightarrow I\) be an orientation-preserving reparametrisation. Let \(u_1, u_2 \in J\) and define \(t_1 = t(u_1)\) and \(t_2 = t(u_2)\). Then
+It is important to note that the arclength is a property of the track of the curve and does not depend on the choice of parametrisation. To see this, let \(p : I \rightarrow \mathbb{R}^3\) and \(q : J \rightarrow \mathbb{R}^3\) be smooth paths, and let \(t : J \rightarrow I\) be an orientation-preserving reparametrisation. Let \(u_1, u_2 \in J\) and define \(t_1 = t(u_1)\) and \(t_2 = t(u_2)\). Then
 \[
 \begin{aligned}
 \int_{u_1}^{u_2} \left| q'(u) \right| \, du & = \int_{u_1}^{u_2} \left| \frac{d}{dt} p(t(u)) \right| \, du \\
@@ -122,9 +122,13 @@ t(s) = \frac{s}{r} .
 \]
 Now define a new parametrisation of the circle \(q : \mathbb{R} \rightarrow \mathbb{R}^3\) by
 \[
-q(s) = \left( r \cos \left( \frac{s}{r} \right), r \sin \left( \frac{s}{r} \right) , 0 \right) .
+q(s) = p(t(s)) = \left( r \cos \left( \frac{s}{r} \right), r \sin \left( \frac{s}{r} \right) , 0 \right) .
 \]
-Then \(q(s) = p\left( \frac{s}{r} \right) = p(t(s))\) and so \(q\) is a reparametrisation of \(p\) (see <a href="Lecture_3_Reparametrisations.html">the lecture on reparametrisations</a> if you need to remind yourself of the definition). Moreover, we also have \(\left| q'(s) \right| = q\), and so \(q\) is an arclength parametrisation of the circle.<br />
+Then \(q(s) = p\left( \frac{s}{r} \right) = p(t(s))\) and so \(q\) is a reparametrisation of \(p\) (see <a href="Lecture_3_Reparametrisations.html">the lecture on reparametrisations</a> if you need to remind yourself of the definition). Moreover, we also have 
+
+\[q'(s) = \left( -\sin\left(\frac{s}{r} \right), \cos \left( \frac{s}{r} \right), 0 \right), \quad \text{therefore} \quad \left| q'(s) \right| = 1\]
+
+and so \(q\) is an arclength parametrisation of the circle.<br />
 
 <br />
 
@@ -165,7 +169,7 @@ Therefore \(q : J \rightarrow \mathbb{R}^3\) is an orientation-preserving repara
 \[
 q'(s)= \frac{d}{ds} p(t(s)) = \frac{dp}{dt} \frac{dt}{ds} = \frac{p'(t)}{|p'(t)|} 
 \] 
-therefore \(|q'(s)| = 1\), and so \(q\) is parametrised by arclength. &nbsp; &nbsp; &nbsp; &nbsp; <code>q.e.d.</code> 
+therefore \(|q'(s)| = \frac{|p'(t)|}{|p'(t)|} = 1\), and so \(q\) is parametrised by arclength. &nbsp; &nbsp; &nbsp; &nbsp; <code>q.e.d.</code> 
 
 <br />
 

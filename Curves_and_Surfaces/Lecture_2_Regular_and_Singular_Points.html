@@ -43,12 +43,16 @@ At some points the tangent line may not be well-defined. This can happen for two
 
 </ol>
 
+These are illustrated in the following examples.<br />
+
+<br />
+
 <a name="L2_Example_1"><b>Example 1.</b></a> (The tangent line to the track is not defined, because the tangent vector is zero)<br />
 Let \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) be a smooth path given by \(p(t) = (t^3, t^2, 0)\). The diagram below shows the track of this path, together with the tangent vector at each point.<br />
 
 
 The tangent vector is \(p'(t) = (3t^2, 2t, 0)\), and when \(t=0\) we have \(p'(0) = (0,0,0)\). Therefore the tangent vector is zero at the origin. Note also that the track forms a cusp at the origin, and therefore there is no unique tangent line.<br />
-Therefore, we have seen in this example that <i>there is no guarantee that a unique tangent line exists if the tangent vector is zero</i><br />
+Therefore, we have seen in this example that <i>if the tangent vector is zero, then there is no guarantee that the tangent line exists</i><br />
 
 <br />
 
@@ -67,7 +71,11 @@ Let \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) be a smooth path given by \(p(t)
 
 We can see from the diagram that the curve crosses over itself (this is called a <i>node</i> of the curve), and we can verify this mathematically by noting that \(p(-1) = (0, 1, 0) = p(1)\).<br />
 
-The tangent vector is \(p'(t) = (3t^2-1, 2t, 0)\). In particular, we see that \(p'(-1) = (0, -2, 0)\) and \(p'(1) = (0,2,0)\). You can also see this in the picture below by clicking and dragging the slider to move the point around the curve. Note that the tangent vector does not vanish for any value of \(t\).<br />
+The tangent vector at an arbitrary point on the curve is \(p'(t) = (3t^2-1, 2t, 0)\). In particular, at the two values \(t = \pm 1\) corresponding to the crossing point, we see that \(p'(-1) = (0, -2, 0)\) and \(p'(1) = (0,2,0)\), therefore we have two distinct tangent vectors, which are distinguished by the different values of \(t\).<br />
+
+<br />
+
+You can also see this in the picture below by clicking and dragging the slider to move the point around the curve. Note that the tangent vector does not vanish for any value of \(t\) and we have a uniquely defined tangent line for each value of \(t\).<br />
 
 <br />
 
@@ -79,14 +87,14 @@ The tangent vector is \(p'(t) = (3t^2-1, 2t, 0)\). In particular, we see that \(
 
 When studying properties of curves, we want to exclude examples where \(p'(t_0) = 0\) (such as the first example above).<br />
 
-Examples such as the second example are OK, since the curve has a non-zero tangent vector for each value of \(t\) in the domain.<br /><br />
+Examples such as the second example are OK, since the curve has a non-zero tangent vector for each value of \(t\) in the domain, even though the track of the curve is singular (due to the nodal point). The key idea here is that we determine the tangent line via the parameter \(t\), which comes from the <i>domain</i> of the parametrisation \(p : I \rightarrow \mathbb{R}^3\).<br /><br />
 
 <b>Definition.</b> (Regular and singular values)<br />
 Let \(p : I \rightarrow \mathbb{R}^3\) be a smooth path. A parameter value \(t_0 \in I\) is 
 
 <ol type="a">
 
-<li> <i>singular</i> or <i>critical</i> if \(p'(t_0) = 0\). In this case we say that \(p(t_0) \in \mathbb{R}^3\) is <i>singular</i> or <i>critical</i>.<br />
+<li> <i>singular</i> or <i>critical</i> if \(p'(t_0) = 0\). In this case we say that the point on the curve \(p(t_0) \in \mathbb{R}^3\) is <i>singular</i> or <i>critical</i>.<br />
 
 <li> A parameter value \(t_0 \in I\) is <i>regular</i> if \(p'(t_0) \neq 0\) (i.e. it is not singular), in which case \(p(t_0)\) is a <i>regular point</i>.<br />
 
@@ -105,7 +113,7 @@ Define \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) by \(p(t) = (t^3, t^6, 0)\). 
 
 Note that the track is the parabola \(y = x^2\) in the \(xy\) plane, which is the same track as the smooth regular path \(p:\mathbb{R}\rightarrow \mathbb{R}\) given by \(q(u) = (t, t^2, 0)\).<br /><br />
 
-<b>Remark.</b> This example shows that you cannot tell whether a path has a singular point just by observing its track. You must check to see whether \(p'(t_0) = 0\) has a solution.<br /> 
+<b>Remark.</b> This example shows that you cannot tell whether a path has a singular point just by observing its track. You must differentiate the parametrisation to check whether \(p'(t_0) = 0\) has a solution.<br /> 
 <br />
 
 <h3>Next time</h3>

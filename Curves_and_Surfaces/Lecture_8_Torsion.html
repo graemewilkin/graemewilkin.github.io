@@ -105,7 +105,7 @@ Consider the cubic curve \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) defined by 
 \[
 T(t) = \frac{p'(t)}{|p'(t)|} = \frac{(1, 3t^2, 0)}{\sqrt{1 + 9t^4}} .
 \]
-Just as for the parabola, reparametrising by arclength turns out to be a long calculation, and so we will use the formula for the curvature in any parametrisation now and prove it in a later lecture.
+Just as for the parabola, reparametrising by arclength turns out to be a long calculation, and so we will use the following formula for the curvature in any parametrisation now and prove it in a later lecture.
 \[
 \begin{aligned}
 \kappa(t) & = \frac{|p'(t) \times p''(t)|}{|p'(t)|^3}{|p'(t)|^3} = \frac{6|t|}{\left( 1 + 9t^4 \right)^{3/2}} \\
@@ -204,7 +204,7 @@ Therefore \[\tau(s) = -\frac{c}{r^2 + c^2} .\]<br /><br />
 
 <h3>Scalar triple product representation of the torsion</h3>
 
-We just showed that \(\tau(s) = B'(s) \cdot N(s)\) and that \(B'(s) = T(s) \times N'(s)\). Therefore, we can rewrite the formula for the torsion as
+We showed above that \(\tau(s) = B'(s) \cdot N(s)\) and that \(B'(s) = T(s) \times N'(s)\). Therefore, we can rewrite the formula for the torsion as
 \[
 \tau(s) = \left( T(s) \times N'(s) \right) \cdot N(s) .
 \]
@@ -216,7 +216,7 @@ This turns out to be a special case of the <i>scalar triple product</i> of three
 <b>Definition.</b> (Scalar triple product)<br /><a name="scalar_triple_def">
 Given any three vectors \(a, b, c \in \mathbb{R}^3\), the <i>scalar triple product</i> is defined to be
 \[
-[a, b, c] = \left( a \times b \right) \cdot c .
+[a, b, c] := \left( a \times b \right) \cdot c .
 \]
 
 Using the fact that the dot product is commutative, and the cross product is anti-commutative \(a \times b = -b \times a\), we immediately have the identities
@@ -258,7 +258,7 @@ Therefore
 \]
 and since \(p''(s) \kappa'(s)\) is parallel to \(p''(s)\), then by the two important properties of the scalar triple product above, we see that
 \[
-\tau(s) = - \frac{1}{\kappa(s)^3} \left[ p'(s), p''(s), p'''(s) \right]
+\tau(s) = - \frac{1}{\kappa(s)^2} \left[ p'(s), p''(s), p'''(s) \right]
 \]
 
 This is an important formula that we will use in future lectures.<br />

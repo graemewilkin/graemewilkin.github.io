@@ -37,6 +37,8 @@ T(t) = \frac{p'(t)}{|p'(t)|} .
 
 <li> If \(p = p(s)\) is parametrised by arclength, then \(T(s) = p'(s)\).
 
+<li> If \(p : I \rightarrow \mathbb{R}^3\) is parametrised by arclength, then \(|p'(t)|=1\) and so the unit tangent vector is \(T(t) = p'(t)\). 
+
 </ol>
 
 <font color="blue">From now on we will use \(s\) as the parameter for any smooth regular path parametrised by arclength.</font><br />
@@ -52,7 +54,7 @@ T(t) = \frac{p'(t)}{|p'(t)|} .
 Since the unit tangent vector has constant length, then
 \[
 \begin{aligned}
-\left| T(t) \right| = 1 \quad \Rightarrow \quad T(t) \cdot T(t) & = \left| T(t) \right|^2 = 1 \\
+\left| T(t) \right| = 1 \quad \Rightarrow \quad T(t) \cdot T(t) = \left| T(t) \right|^2 & = 1 \\
  \Rightarrow \quad \frac{d}{dt} \left( T(t) \cdot T(t) \right) & = 0 \\
 \Leftrightarrow \quad T'(t) \cdot T(t) + T(t) \cdot T'(t)) & = 0 \quad \text{(Product Rule for dot product)} \\
 \Leftrightarrow \quad 2 T'(t) \cdot T(t) & = 0 . \quad \text{(Commutativity of dot product)}
@@ -134,7 +136,8 @@ q(s) & = \left( r \cos \left( \frac{s}{r} \right), r \sin \left( \frac{s}{r} \ri
 
 <h3>Curvature and the curvature vector</h3>
 
-Intuitively, the magnitude \(|T'(t)|\) measures how fast the unit tangent vector is moving. If we parametrise by arclength, which is a canonical parametrisation of a regular curve, then \(|T'(s)|\) measures "how much the path is curving".<br />
+The magnitude \(|T'(t)|\) measures the magnitude of the rate of change of the unit tangent vector. We saw above that \(T'(t)\) is orthogonal to \(T(t)\), therefore \(|T'(t)|\) measures the rate of change (with respect to the parameter \(t\)) of the direction of the unit tangent vector. <br />
+We saw above that \(|T'(t)|\) depends on the choice of parametrisation. If we reparametrise by arclength \(s = s(t)\), which is a canonical parametrisation of a regular curve, then \(|T'(s)|\) is now an intrinsic quantity that only depends on the curve (not the choice of parametrisation). This quantity measures "how much the path is curving" (equivalently, the rate of change of the direction of the unit tangent vector).<br />
 
 <br />
 
@@ -160,7 +163,7 @@ and the <i>curvature</i> is
 
 <li> We showed above that \(T'(s) \cdot T(s)\), therefore <i>the curvature vector \(k(s)\) is always orthogonal to \(T(s)\)</i>.
 
-<li> \(k(s)\) measures the change of direction of \(T(s)\), while \(\kappa(s)\) measures the magnitude of this change of direction.
+<li> \(k(s)\) measures the rate of change of direction of \(T(s)\), while \(\kappa(s)\) measures the magnitude of this change of direction.
 
 <li> In our example of the circle, we computed \(\kappa(s) = | T'(s) | = \frac{1}{r}\). Therefore the curvature becomes large as the radius becomes small, which matches our intuition that the circle is more tightly curved when the radius is small.
 
@@ -172,8 +175,6 @@ Now we will compute the curvature of the helix.<br /><br />
 <b>Example.</b> (Helix)<br />
 
 Recall that the arclength parametrisation of the helix is \(q : \mathbb{R} \rightarrow \mathbb{R}^3\) given by
-\]
-and so the reparametrisation by arclength is given by 
 \[
 \begin{aligned}
 q : \mathbb{R} & \rightarrow \mathbb{R}^3 \\

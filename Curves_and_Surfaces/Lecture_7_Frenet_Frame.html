@@ -24,7 +24,7 @@ k(s) & = T'(s) \in \mathbb{R}^3 \\
 \kappa(s) & = \left| k(s) \right| = \left| T'(s) \right| \in \mathbb{R} .
 \end{aligned}
 \]
-We also showed that \(k(s) \cdot T(s) = 0\), and so the curvature vector is always orthogonal to the tangent vector (in fact, this is valid in any parametrisation).<br />
+We also showed that \(k(s) \cdot T(s) = 0\), and so the curvature vector is always orthogonal to the tangent vector.<br />
 
 <br />
 
@@ -125,7 +125,9 @@ We can see this in the following example of the helix.<br />
 
 <a name="L7_Frenet_Helix"><b>Example.</b> (The Frenet frame for the helix)</a><br />
 
-Recall that \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) given by \(p(s) = \left( r \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), r \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{cs}{\sqrt{r^2+c^2}} \right)\) represents a helix parametrised by arclength.
+Recall that \(p : \mathbb{R} \rightarrow \mathbb{R}^3\) given by 
+\[p(s) = \left( r \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), r \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{cs}{\sqrt{r^2+c^2}} \right)\]
+represents a helix parametrised by arclength.
 
 The unit tangent vector is
 \[ T(s) = p'(s) = \left( - \frac{r}{\sqrt{r^2+c^2}} \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{r}{\sqrt{r^2+c^2}} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{c}{\sqrt{r^2+c^2}} \right) \]
@@ -138,7 +140,7 @@ Therefore the curvature is \[ \kappa(s) = \frac{r}{\sqrt{r^2+c^2}} \] and the un
 The binormal vector is then 
 \[ B(s) = T(s) \times N(s) = \left( \frac{c}{\sqrt{r^2 + c^2}} \sin \left( \frac{s}{\sqrt{r^2+c^2}} \right), -\frac{c}{\sqrt{r^2 + c^2}} \cos \left( \frac{s}{\sqrt{r^2+c^2}} \right), \frac{r}{\sqrt{r^2+c^2}} \right). \]
 
-We can see the Frenet frame \(T, N, B\) for the helix, and how it changes as the point \(P\) moves along the curve, in the following picture.<br />
+The following picture shows the Frenet frame \(T, N, B\) for the helix, and how it changes as the point \(P\) moves along the curve.<br />
 
 <br />
 

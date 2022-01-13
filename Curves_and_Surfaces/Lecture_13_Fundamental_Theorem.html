@@ -27,6 +27,10 @@ Today we will prove the <i>Fundamental Theorem of Space Curves</i>, which shows 
 
 <h3>Euclidean motions</h3>
 
+First we will recall some facts about Euclidean motions. These are derived using results from Linear Algebra. While we won't review that material in this course, it is a good exercise to go back and review this yourself before working through the details of the calculations below. <br />
+
+<br />
+
 <b>Definition.</b> (Euclidean motion)<br />
 
 A transformation \(E : \mathbb{R}^3 \rightarrow \mathbb{R}^3\) is called a <i>Euclidean motion</i> or <i>isometry</i> if it preserves distances and angles.<br />
@@ -54,7 +58,7 @@ Equivalently, for all vectors \(v, w \in \mathbb{R}^3\), we have
 \[
 (Lv) \cdot (Lw) = v \cdot w .
 \]
-This condition implies that \(L\) is represented by an orthogonal matrix
+This condition implies that \(L\) is represented by an orthogonal matrix. Recall that an orthogonal matrix must satisfy the following condition.
 \[
 L L^T = \left( \begin{matrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{matrix} \right)
 \]
@@ -69,7 +73,7 @@ If \(\det L = 1\) then \(L\) corresponds to a rotation about the origin. If \(\d
 
 <br />
 
-Therefore, we see that a Euclidean motion \(E(v) = Lv + c\) satisfies <i>every Eclidean motion is the composition of a rotation with a reflection and/or a translation</i>.<br />
+Therefore, we see that a Euclidean motion \(E(v) = Lv + c\) satisfies <i>every Euclidean motion is the composition of a rotation with a reflection and/or a translation</i>.<br />
 
 <br />
 
@@ -96,7 +100,7 @@ If \(E\) is also orientation-preserving, then we say that \(p\) and \(q\) are <i
 
 <h3>The Fundamental Theorem of Space Curves</h3>
 
-Now we can prove the main theorem of today's lecture (and the first part of the course). This theorem says that if two curves have no inflection points, then their curvature and torsion is the same if and only if the curves are properly congruent. Therefore the curvature and torsion completely determine the curve up to proper congruence. <br />
+Now we can prove the main theorem of today's lecture, which is the culmination of the first part of the course. This theorem says that if two curves have no inflection points, then their curvature and torsion is the same if and only if the curves are properly congruent. Therefore the curvature and torsion completely determine the curve up to proper congruence. <br />
 
 <br />
 
@@ -141,7 +145,7 @@ The key idea is to use the <a href="Lecture_12_Frenet_formulas.html">Frenet form
 \left( \begin{matrix} T'(s) \\ N'(s) \\ B'(s) \end{matrix} \right) = \left( \begin{matrix} 0 & \kappa(s) & 0 \\ -\kappa(s) & 0 & -\tau(s) \\ 0 & \tau(s) & 0 \end{matrix} \right) \left( \begin{matrix} T(s) \\ N(s) \\ B(s) \end{matrix} \right)
 \]
 
-This is a system of ODEs in the variables \((T(s), N(s), B(s))\). General ODE theory shows that a solution exists and is unique up to a constant of integration, which in this case is \(T(s_0) = p'(s_0)\) for some \(s_0 \in I\).<br />
+This is a system of ODEs in the variables \((T(s), N(s), B(s))\). General ODE theory shows that a solution exists and is unique up to a constant of integration, which in this case turns out to be \(T(s_0) = p'(s_0)\) (the initial velocity) for some \(s_0 \in I\).<br />
 
 <br />
 
@@ -149,7 +153,7 @@ We can then solve for \(p(s)\) by integrating the solution \(p'(s) = T(s)\).<br 
 
 Again, this solution is unique up to another constant of integration \(p(s_0)\).<br /><br />
 
-Therefore, if we know the initial position \(p(s_0)\) and the initial velocity \(p'(s_0)\), then we can reconstruct the entire path from the Frenet formulas.<br />
+Therefore, if we know the initial position \(p(s_0)\) and the initial velocity \(p'(s_0)\), as well as the curvature \(\kappa(s)\) and torsion \(\tau(s)\) for each value of \(s \in I\), then we can reconstruct the entire path from the Frenet formulas.<br />
 
 <br />
 

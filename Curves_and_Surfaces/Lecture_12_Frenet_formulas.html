@@ -16,7 +16,7 @@
 
 <p align="right"><a href="index.html">Back to Curves and Surfaces homepage</a></p>
 
-Recall from the lecture on the <a href="">Frenet frame</a> that if \(p : I \rightarrow \mathbb{R}^3\) is parametrised by arclength and \(p(s)\) is not a point of inflection (equivalently, \(p''(s) \neq 0 \quad \Leftrightarrow \quad \kappa(s) \neq 0\)) then we can define the <i>Frenet frame</i> at \(p(s)\) as the orthonormal triple of vectors \(T(s), N(s), B(s)\) given by the formulas
+Recall from the lecture on the <a href="Lecture_7_Frenet_Frame.html">Frenet frame</a> that if \(p : I \rightarrow \mathbb{R}^3\) is parametrised by arclength and \(p(s)\) is not a point of inflection (equivalently, \(p''(s) \neq 0\) which is equivalent to \(\kappa(s) \neq 0\)) then we can define the <i>Frenet frame</i> of the curve at the point \(p(s)\) as the orthonormal triple of vectors \(T(s), N(s), B(s)\) given by the formulas
 \[
 \begin{aligned}
 T(s) & = p'(s) \quad \text{(Unit tangent vector)} \\
@@ -25,24 +25,28 @@ B(s) & = T(s) \times N(s) \quad \text{(Binormal vector)}
 \end{aligned}
 \]
 
-The following picture shows the Frenet frame for the helix.
+The following picture shows the Frenet frame for the helix as the point \(P\) moves along the curve.
+
+<br />
 
 <center>
 <iframe scrolling="no" title="The Frenet frame for the helix" src="https://www.geogebra.org/material/iframe/id/e3bzqpn3/width/791/height/602/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="602px" style="border:0px;"> </iframe>
 </center>
 
+<br />
+
 In this lecture we will prove the <i>Frenet formulas</i> which relate the derivatives \(T'(s), N'(s), B'(s)\) to the Frenet frame \(T(s), N(s), B(s)\). This relationship can be written entirely in terms of the curvature and torsion, which will allow us to prove in the <a href="Lecture_13_Fundamental_Theorem.html">next lecture</a> that the curvature and torsion completely determine the curve up to Euclidean motions.<br />
 
 <br />
 
-First recall that the definition of the curvature implies that
+First recall the definition of the curvature
 \[
 \begin{aligned}
 N(s) & = \frac{T'(s)}{|T'(s)|} \\
-\Rightarrow \quad T'(s) & = \kappa(s) N(s) .
+\Rightarrow \quad T'(s) & = \kappa(s) N(s) 
 \end{aligned}
 \]
-The definition of the torsion implies that
+and the definition of the torsion
 \[
 B'(s) = \tau(s) N(s) .
 \]
@@ -56,7 +60,7 @@ Therefore we have easily computed \(T'(s)\) and \(B'(s)\) in terms of the curvat
 \]
 for some real numbers \(\alpha\) and \(\beta\) which we can compute by
 \[
-\alpha = N'(s) \cdot T(s), \quad \beta = N'(s) \cdot B(s) .
+N'(s) \cdot T(s) = \left( \alpha T(s) + \beta B(s) \right) \cdot T(s) = \alpha , \quad N'(s) \cdot B(s) = \left( \alpha T(s) + \beta B(s) \right) \cdot B(s) = \beta .
 \]
 Now we also know that
 \[
@@ -64,7 +68,7 @@ Now we also know that
 N(s) \cdot T(s) &  = 0 \\
 \Rightarrow \quad \frac{d}{ds} \left( N(s) \cdot T(s) \right) & = 0 \\
 \Leftrightarrow \quad N'(s) \cdot T(s) + N(s) \cdot T'(s) & = 0 \\
-\Rightarrow \quad \alpha = N'(s) \cdot T(s) = -N(s) \cdot T'(s) . & 
+\Rightarrow \quad \alpha = N'(s) \cdot T(s) & = -N(s) \cdot T'(s) .  
 \end{aligned}
 \]
 The definition of curvature tells us that \(T'(s) = \kappa(s) N(s)\), and therefore
@@ -75,7 +79,7 @@ Now we can use the same idea to compute \(\beta = N'(s) \cdot B(s)\). By differe
 \[
 \begin{aligned}
 N'(s) \cdot B(s) + N(s) \cdot B'(s) & = 0 \\
-\Leftrightarrow \quad \beta = N'(s) \cdot B(s) = - N(s) \cdot B'(s) . & 
+\Leftrightarrow \quad \beta = N'(s) \cdot B(s) & = - N(s) \cdot B'(s) . 
 \end{aligned}
 \]
 The definition of torsion tells us that \(B'(s) = \tau(s) N(s)\), therefore
